@@ -46,8 +46,8 @@ No estudo mostrado na palestra, as pessoas que aprovavam comando por comando peg
 | 0 | Baixar o kit | `git clone https://github.com/inematds/fora-do-volante.git && cd fora-do-volante` | 🧠 você |
 | 1 | Conferir o seu projeto | `python3 ferramentas/conferir_volante.py ~/meu-projeto` | ⚙️ script |
 | 2 | Copiar a configuração e o hook | `cp -rn kit/.claude ~/meu-projeto/` (não sobrescreve; se já tiver `settings.json`, junte as chaves à mão; ponha `.claude/.pronto-bloqueios` no `.gitignore`) | 🧠 você |
-| 3 | Dizer qual é a checagem de "pronto" | `echo "python3 -m unittest discover -s tests -q" > ~/meu-projeto/.claude/pronto.cmd` | 🧠 você |
-| 4 | Ajustar o auto mode à sua casa | no Claude Code: `/auto-mode-setup` (rascunha `autoMode.environment`) | 🧠 você + Claude |
+| 3 | Dizer qual é a checagem de "pronto" | `echo "python3 -m unittest discover -s tests -q" > ~/meu-projeto/.claude/pronto.cmd` (troque pelo comando de teste do seu projeto) | 🧠 você |
+| 4 | Ligar o auto mode e ajustar à sua casa | `claude --permission-mode auto` (ou Shift+Tab até "⏵⏵ auto mode on"; padrão desde a 2.1.283), depois `/auto-mode-setup` (rascunha `autoMode.environment`) | 🧠 você + Claude |
 | 5 | Ligar e testar o sandbox | `/sandbox` (Linux/WSL2: `bubblewrap` e `socat`) | 🧠 você |
 | 6 | Enxugar o CLAUDE.md | `/doctor prompt-audit` e o teste "ele descobriria isso lendo o código?" | 🧠 você + Claude |
 | 7 | Ver o hook cobrar | `bash exemplo/rodar.sh` | ⚙️ script |

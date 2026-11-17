@@ -145,6 +145,7 @@
   .tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
   .tbl th{font-family:Sora;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
   .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+  @media(max-width:600px){.tbl thead{display:none} .tbl tr{display:block;border-bottom:1px solid var(--line);padding:6px 0} .tbl tr:last-child{border-bottom:none} .tbl td{display:block;border:none;padding:4px 14px}}
 </style>
 </head>
 <body>
@@ -255,7 +256,7 @@
       <li><b>O Claude voltou, achou o erro, consertou e conferiu de novo.</b><br><span class="mut">Só parou quando o teste passou.</span></li>
     </ol>
     <blockquote>"O teste falhava porque <code>soma()</code> em <code>calc.py</code> subtraía em vez de somar (<code>a - b</code>). Troquei para <code>a + b</code> e rodei a checagem de novo: o teste passa (<code>OK</code>)."</blockquote>
-    <p class="rod">Resposta final do Claude. Claude Code 2.1.326, pela assinatura, 17/11/2026, no modo <code>acceptEdits</code> (aceita edições sem perguntar). Com o código 1 no lugar do 2, o "pronto" do passo 1 teria sido a resposta final. Registro completo: <a href="https://github.com/inematds/fora-do-volante/blob/main/exemplo/PROVA.md" target="_blank" rel="noopener">exemplo/PROVA.md</a>.</p>
+    <p class="rod">Resposta final do Claude. Claude Code 2.1.326, pela assinatura, 17/11/2026, no modo <code>acceptEdits</code> (aceita edições sem perguntar). Com o código 1 no lugar do 2, o "pronto" da primeira resposta teria sido a resposta final. Resumo da prova: <a href="https://github.com/inematds/fora-do-volante/blob/main/exemplo/PROVA.md" target="_blank" rel="noopener">exemplo/PROVA.md</a>.</p>
   </div>
 </div></section>
 
@@ -313,9 +314,11 @@
     <div class="card"><h3>Por que Stop e TaskCompleted</h3><p>São os momentos em que o Claude tenta parar ou fechar uma tarefa. <code>PostToolUse</code> não bloqueia nem com 2, porque a ferramenta já rodou.</p></div>
     <div class="card"><h3>Proteção contra laço</h3><p>O <code>pronto.sh</code> bloqueia no máximo 3 vezes seguidas (<code>PRONTO_MAX</code>). Depois avisa e deixa parar, para você olhar.</p></div>
   </div>
-  <p style="margin-top:22px" class="mut">De onde o hook tira a checagem, nesta ordem: a variável <code>PRONTO_CMD</code>, o arquivo <code>.claude/pronto.cmd</code> (uma linha) ou a detecção de <code>npm test</code> / <code>python3 -m unittest</code>. Sem nada para checar, ele não bloqueia.</p>
-<pre><span class="c"># exemplo de .claude/pronto.cmd para o login: testes passam E nenhuma chamada à API velha</span>
-<span class="k">python3 -m unittest discover -s tests -q && ! grep -rn "api_velha" src/</span></pre>
+  <p style="margin-top:22px" class="mut">De onde o hook tira a checagem, nesta ordem: a variável <code>PRONTO_CMD</code>, o arquivo <code>.claude/pronto.cmd</code> (uma linha) ou a detecção de <code>npm test</code> / <code>python3 -m unittest</code>. Sem nada para checar, ele não bloqueia. No exemplo do login, a checagem são os testes de <code>exemplo/login-api/tests/</code>: um confere que o login usa a API nova, o outro que ninguém é deslogado.</p>
+<pre><span class="c"># .claude/pronto.cmd do exemplo do login</span>
+<span class="k">python3 -m unittest discover -s tests -q</span></pre>
+  <p class="mut">Se você juntar um <code>grep</code> à checagem, confira que a pasta existe: <code>! grep -rn "x" src/</code> passa sempre quando não há <code>src/</code>, e aí o "pronto" sai falso.</p>
+  <p class="mut">O sandbox do kit só libera a rede para <code>github.com</code>, <code>pypi.org</code>, <code>files.pythonhosted.org</code> e <code>registry.npmjs.org</code>. Se o seu projeto fala com outro site (a API nova do login, por exemplo), acrescente o domínio em <code>sandbox.network.allowedDomains</code> no <code>.claude/settings.json</code>.</p>
 </div></section>
 
 <section id="pre"><div class="wrap">
@@ -351,21 +354,23 @@
 
   <div class="step"><div class="b">2</div><div>
     <h3>Copiar a configuração e o hook <span class="quem">🧠 você</span></h3>
-    <p>O <code>-n</code> não sobrescreve nada: se o seu projeto já tem um <code>.claude/settings.json</code>, ele fica como está e você junta as chaves do kit à mão. O hook anota as voltas em <code>.claude/.pronto-bloqueios</code>; ponha esse arquivo no <code>.gitignore</code> do projeto.</p>
+    <p>O <code>-n</code> não sobrescreve nada (em versões novas do <code>cp</code> ele imprime um aviso sobre o <code>-n</code>; é normal): se o seu projeto já tem um <code>.claude/settings.json</code>, ele fica como está e você junta as chaves do kit à mão. O hook anota as voltas em <code>.claude/.pronto-bloqueios</code>; ponha esse arquivo no <code>.gitignore</code> do projeto.</p>
 <pre><span class="k">cp -rn kit/.claude ~/meu-projeto/</span>
 <span class="k">echo ".claude/.pronto-bloqueios" >> ~/meu-projeto/.gitignore</span></pre>
   </div></div>
 
   <div class="step"><div class="b">3</div><div>
     <h3>Dizer qual é a checagem de "pronto" <span class="quem">🧠 você</span></h3>
-    <p>Uma linha com o comando que prova que a tarefa está pronta. Use o modelo de <code>kit/como-e-pronto.md</code> no pedido.</p>
+    <p>Uma linha com o comando que prova que a tarefa está pronta. Troque pelo comando de teste do seu projeto (<code>npm test</code>, <code>pytest</code>…): se ele falhar sempre, o hook segura cada parada até 3 vezes. Use o modelo de <code>kit/como-e-pronto.md</code> no pedido.</p>
 <pre><span class="k">echo "python3 -m unittest discover -s tests -q" > ~/meu-projeto/.claude/pronto.cmd</span></pre>
   </div></div>
 
   <div class="step"><div class="b">4</div><div>
-    <h3>Ajustar o auto mode à sua casa <span class="quem">🧠 você + Claude</span></h3>
-    <p>No Claude Code, dentro do seu projeto. Ele rascunha o <code>autoMode.environment</code>: a descrição da sua casa (repositório, serviços, o que é seu) que o verificador do auto mode usa para decidir o que pode rodar. É um comando do próprio Claude Code, não do kit.</p>
-<pre><span class="k">/auto-mode-setup</span></pre>
+    <h3>Ligar o auto mode e ajustar à sua casa <span class="quem">🧠 você + Claude</span></h3>
+    <p>A partir da versão 2.1.283, o Claude Code já começa no auto mode. Se a barra de status não mostra <code>⏵⏵ auto mode on</code>, abra com a opção abaixo ou aperte Shift+Tab até aparecer. Ele exige um modelo compatível, e uma empresa pode desligá-lo para todos.</p>
+    <p>Depois, rode <code>/auto-mode-setup</code>: ele rascunha o <code>autoMode.environment</code>, a descrição da sua casa (repositório, serviços, o que é seu) que o verificador do auto mode usa para decidir o que pode rodar. Esse comando existe nos planos Pro, Max, Ultra, Team e Enterprise e com chave do Claude Console. Os dois são do próprio Claude Code, não do kit.</p>
+<pre><span class="k">claude --permission-mode auto</span>   <span class="c"># ou Shift+Tab até "⏵⏵ auto mode on"</span>
+<span class="k">/auto-mode-setup</span></pre>
   </div></div>
 
   <div class="step"><div class="b">5</div><div>
