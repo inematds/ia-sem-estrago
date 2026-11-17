@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.2 — 17/11/2026
+- `kit/CLAUDE.md.exemplo`: título sem "NÃO" em maiúscula (o modelo seguia a própria regra só pela metade).
+
 ## 1.0.1 — 17/11/2026
 - `kit/CLAUDE.md.exemplo`: a linha que pedia "sem IMPORTANTE/NUNCA" escrevia as próprias palavras em maiúscula e o conferidor acusava o modelo; agora diz "palavras de alarme em caixa alta".
 - Guia publicado (landing + guia de uso em PT, EN e ES) em `guia/`, GitHub Pages por Actions; READMEs em EN e ES.

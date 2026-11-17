@@ -1,4 +1,4 @@
-# CLAUDE.md enxuto — só o que o Claude NÃO descobre lendo o código
+# CLAUDE.md enxuto — só o que o Claude não descobre lendo o código
 
 Teste de cada linha: "o Claude descobriria isso lendo o código?" Se sim, apague.
 Sem palavras de alarme em caixa alta: nos modelos de hoje isso gera mais chamadas de ferramenta e resultado pior.
