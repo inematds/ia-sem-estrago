@@ -6,6 +6,25 @@
 
 Você pode parar de vigiar o Claude, de clicar em permitir e de descobrir o erro só no fim: o time do Claude Code já parou. Em maio eles faziam 2.500 mudanças de código por dia; em setembro, mais de 30.000. O método é sair do volante, em três trocas.
 
+## Em 1 minuto
+
+**O problema:** quem usa o Claude Code vira babá. Vigia cada passo, clica em "permitir" toda hora e só descobre no fim que a tarefa não ficou pronta.
+
+**De onde veio:** de uma palestra do time do Claude Code, na Anthropic. Eles pararam de trabalhar assim e passaram de 2.500 para mais de 30.000 mudanças de código por dia. O segredo foi tirar do humano três tarefas e deixar a máquina fazer.
+
+**O método "fora do volante" são três trocas:**
+1. **Pare de vigiar:** instrução curta, sem "IMPORTANTE" em maiúscula, que atrapalha os modelos de hoje.
+2. **Pare de aprovar tudo:** deixe o modo automático aprovar. O que não tem volta (apagar, ler senha, mandar e-mail) vira trava num arquivo, que o Claude não consegue passar.
+3. **Confira no caminho:** diga como é "pronto", e um teste automático manda o Claude voltar e consertar até estar pronto de verdade.
+
+**O kit (este repositório) é o método já montado, para copiar no seu projeto:**
+- o arquivo de travas pronto;
+- o script que cobra o "pronto";
+- um conferidor que diz se o seu projeto está nas três trocas;
+- um exemplo e a prova real: pedimos ao Claude só "diga pronto", com um erro escondido; a trava barrou, ele achou o erro, consertou e só então parou.
+
+**Tudo grátis:** o kit, o guia em português, inglês e espanhol, e vídeos explicando, um para quem já usa o Claude Code e outro para quem está começando.
+
 ## 📖 Guia de uso
 
 Guia completo (landing + passo a passo): **https://inematds.github.io/fora-do-volante/guia/**

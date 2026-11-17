@@ -6,6 +6,25 @@
 
 Puedes dejar de vigilar a Claude, de hacer clic en permitir y de descubrir el error solo al final: el equipo de Claude Code ya dejó de hacerlo. En mayo hacían 2.500 cambios de código al día; en septiembre, más de 30.000. El método es soltar el volante con tres cambios.
 
+## En 1 minuto
+
+**El problema:** quien usa Claude Code se convierte en niñera. Vigila cada paso, hace clic en «permitir» todo el tiempo y solo descubre al final que la tarea no quedó lista.
+
+**De dónde viene:** de una charla del equipo de Claude Code, en Anthropic. Dejaron de trabajar así y pasaron de 2.500 a más de 30.000 cambios de código por día. El secreto fue quitarle al humano tres tareas y dejar que las haga la máquina.
+
+**El método «suelta el volante» son tres cambios:**
+1. **Deja de vigilar:** una instrucción breve, sin «IMPORTANTE» en mayúsculas, que interfiere con los modelos actuales.
+2. **Deja de aprobarlo todo:** deja que el modo automático apruebe. Lo que no tiene vuelta atrás (borrar, leer una contraseña, enviar un correo) se convierte en un bloqueo en un archivo, que Claude no puede saltarse.
+3. **Comprueba durante el proceso:** di qué significa «listo», y una prueba automática hace que Claude vuelva y corrija hasta que esté listo de verdad.
+
+**El kit (este repositorio) es el método ya preparado para copiarlo en tu proyecto:**
+- el archivo de bloqueos listo;
+- el script que exige que esté «listo»;
+- un verificador que indica si tu proyecto tiene los tres cambios;
+- un ejemplo y la prueba real: le pedimos a Claude solo «di listo», con un error oculto; el bloqueo lo detuvo; Claude encontró el error, lo corrigió y solo entonces paró.
+
+**Todo gratis:** el kit, la guía en portugués, inglés y español, y videos explicativos: uno para quienes ya usan Claude Code y otro para quienes están empezando.
+
 ## 📖 Guía de uso
 
 Guía completa (landing + paso a paso): **https://inematds.github.io/fora-do-volante/guia/es/**

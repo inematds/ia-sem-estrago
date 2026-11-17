@@ -6,6 +6,25 @@
 
 You can stop watching Claude, clicking allow, and finding out only at the end that something went wrong: the Claude Code team already has. In May, they were making 2,500 code changes a day; by September, more than 30,000. The method is to take your hands off the wheel in three changes.
 
+## In 1 minute
+
+**The problem:** people who use Claude Code become babysitters. They watch every step, click “allow” all the time, and only find out at the end that the task wasn’t completed.
+
+**Where it came from:** a talk by the Claude Code team at Anthropic. They stopped working that way and went from 2,500 to more than 30,000 code changes per day. The secret was to take three tasks off people’s hands and let the machine do them.
+
+**The “hands off the wheel” method means three changes:**
+1. **Stop watching:** use short instructions, without uppercase “IMPORTANT,” which gets in the way of today’s models.
+2. **Stop approving everything:** let automatic mode approve. Anything irreversible (deleting, reading passwords, sending email) becomes a lock in a file that Claude can’t get past.
+3. **Check along the way:** say what “done” looks like, and an automatic test tells Claude to go back and fix things until it’s truly done.
+
+**The kit (this repository) is the method already put together, ready to copy into your project:**
+- the lock file, ready to use;
+- the script that checks for “done”;
+- a checker that tells you whether your project follows the three changes;
+- an example and real proof: we asked Claude only to “say done,” with a hidden error; the lock stopped it; Claude found the error, fixed it, and only then stopped.
+
+**All free:** the kit, the guide in Portuguese, English, and Spanish, and explanatory videos—one for people who already use Claude Code and another for those just getting started.
+
 ## 📖 Usage guide
 
 Complete guide (landing page + step-by-step): **https://inematds.github.io/fora-do-volante/guia/en/**

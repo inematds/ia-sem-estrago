@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.3 — 17/11/2026
+- Seção "Explicado em 1 minuto" no guia (PT/EN/ES) e "Em 1 minuto" nos 3 READMEs: problema, de onde veio, as três trocas, o kit, a prova e o que é grátis.
+
 ## 1.0.2 — 17/11/2026
 - `kit/CLAUDE.md.exemplo`: título sem "NÃO" em maiúscula (o modelo seguia a própria regra só pela metade).
 
