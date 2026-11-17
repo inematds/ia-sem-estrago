@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fora do volante — pare de vigiar o Claude, em três trocas</title>
+<meta name="description" content="Você pode parar de vigiar o Claude, de clicar em permitir e de descobrir o erro só no fim: o time do Claude Code já parou. O método é sair do volante, em três trocas, com um kit grátis.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/fora-do-volante/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/fora-do-volante/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/fora-do-volante/guia/es/">
+<meta property="og:title" content="Fora do volante — pare de vigiar o Claude, em três trocas">
+<meta property="og:description" content="O time do Claude Code já parou de vigiar, de aprovar tudo e de descobrir o erro no fim. O método e o kit grátis.">
+<meta property="og:image" content="https://inematds.github.io/fora-do-volante/guia/assets/banner.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#FACC15; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    --fill:#FACC15; --tint:rgba(250,204,21,.12); --ok:#7CE0C6; --bad:#F0918A;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#a16207; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    --fill:#FACC15; --tint:#FEF9C3; --ok:#0E6B55; --bad:#A83426;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  body.light pre .k{color:#f0c070}
+  body.light nav{background:rgba(246,247,249,.85)}
+  body.light .amb{color:var(--txt);background:linear-gradient(transparent 55%,#FACC15 55%)}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  body.light main a:not(.btn),body.light footer a{color:#854d0e;text-decoration:underline;text-decoration-color:#FACC15;text-decoration-thickness:3px}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  p code,li code,td code{font-size:.9em;background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:.05em .35em}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora;font-weight:800;letter-spacing:-.02em;color:var(--amb);white-space:nowrap}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:var(--tint)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--fill);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:860px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(250,204,21,.18),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.1rem,4.6vw,3.3rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.15rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:44ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;height:auto;display:block}
+  .resumo{padding:38px 0 34px;border-bottom:1px solid var(--line)}
+  .resumo p{font-size:1.12rem;line-height:1.7;max-width:74ch;margin:.55em 0 0}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:66ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;min-width:0}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.95rem;margin:0}
+  .card p+p{margin-top:.6em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0;margin:.4em 0 0}
+  pre .c{color:#7d7d8a} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:28px}
+  .step>div{min-width:0}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--fill);color:#1a1206;font-family:Sora;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .5em}
+  .quem{display:inline-block;font-family:Sora;font-size:.75rem;letter-spacing:.06em;color:var(--txt);background:var(--tint);border:1px solid var(--line);border-radius:999px;padding:.1em .7em;margin-left:.5em;vertical-align:middle;font-weight:600}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:4px}
+  /* números */
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
+  @media(max-width:720px){.stats{grid-template-columns:1fr}}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .stat b{display:block;font:800 clamp(1.9rem,4vw,2.6rem)/1.05 Sora,sans-serif;letter-spacing:-.02em;color:var(--amb)}
+  body.light .stat b{color:var(--txt)}
+  .stat span{display:block;color:var(--mut);font-size:.93rem;margin-top:.5em}
+  .fonte{font-size:.86rem;color:var(--mut);margin-top:14px;max-width:80ch}
+  /* trocas */
+  .troca{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;padding:26px 0;border-top:1px solid var(--line)}
+  .troca:first-of-type{border-top:none}
+  .troca .n{width:64px;height:64px;border-radius:14px;border:1px solid var(--line);background:var(--card);display:flex;align-items:center;justify-content:center;font:800 1.6rem Sora,sans-serif;color:var(--amb)}
+  body.light .troca .n{color:var(--txt);background:var(--fill);border-color:var(--fill)}
+  .troca h3{font-size:1.3rem;margin-bottom:.35em}
+  .troca p{margin:.35em 0;max-width:72ch}
+  .troca .ex{margin-top:.8em;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--fill);border-radius:10px;padding:12px 16px;font-size:.95rem;color:var(--mut);max-width:76ch}
+  .troca .ex b{color:var(--txt)}
+  @media(max-width:540px){.troca{grid-template-columns:1fr}}
+  /* três finais */
+  .vs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px;max-width:900px}
+  @media(max-width:720px){.vs{grid-template-columns:1fr}}
+  .vs div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.93rem}
+  .vs strong{display:block;font-family:Sora;margin-bottom:.25em}
+  .vs .r{display:block;margin-top:.5em;font-weight:600}
+  .vs .r.bad{color:var(--bad)} .vs .r.ok{color:var(--ok)}
+  /* prova */
+  .prova{background:var(--card);border:1px solid var(--amb);border-radius:16px;padding:26px 26px 22px;margin-top:6px}
+  body.light .prova{border-color:#EAB308}
+  .tl{list-style:none;margin:0;padding:0;counter-reset:t}
+  .tl li{position:relative;padding:0 0 18px 48px;counter-increment:t}
+  .tl li::before{content:counter(t);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:10px;background:var(--fill);color:#1a1206;font:800 .95rem/32px Sora,sans-serif;text-align:center}
+  .tl li::after{content:"";position:absolute;left:15px;top:36px;bottom:4px;width:2px;background:var(--line)}
+  .tl li:last-child::after{display:none}
+  .tl b{font-family:Sora}
+  blockquote{margin:6px 0 0;padding:14px 18px;border-left:3px solid var(--fill);background:var(--bg2);border-radius:0 10px 10px 0;font-size:1.02rem}
+  .prova .rod{font-size:.86rem;color:var(--mut);margin-top:14px}
+  /* parte técnica */
+  .techhead{background:var(--bg2);border-top:3px solid var(--fill);padding:58px 0 8px}
+  .techhead h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin:.3em 0 0}
+  .techhead .sub{color:var(--mut);margin:.6em 0 1.2em;max-width:66ch}
+  .techzone{background:var(--bg2)}
+  .techzone .card{background:var(--card)}
+  .tbl{width:100%;border-collapse:collapse;font-size:.93rem}
+  .tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .tbl th{font-family:Sora;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mut)}
+  .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">🛞</span> Fora do volante</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#problema">O problema</a>
+    <a class="sec" href="#trocas">As três trocas</a>
+    <a class="sec" href="#prova">A prova</a>
+    <a class="sec" href="#fonte">De onde vem</a>
+    <a class="sec" href="#tecnico">Kit (técnico)</a>
+    <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
+    <a class="btn" href="https://github.com/inematds/fora-do-volante" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Método para Claude Code · kit grátis</span>
+      <h1><span class="amb">Fora do volante</span>: o Claude termina a tarefa sem você vigiando</h1>
+      <p class="lead">Você pode parar de vigiar o Claude, de clicar em permitir e de descobrir o erro só no fim: o time do Claude Code já parou. O método é sair do volante, em três trocas.</p>
+      <div class="cta">
+        <a class="btn" href="#problema">Entender em 3 minutos</a>
+        <a class="btn ghost" href="https://github.com/inematds/fora-do-volante" target="_blank" rel="noopener">Ver no GitHub</a>
+      </div>
+    </div>
+    <figure><img src="assets/banner.jpg" alt="Fora do volante: pare de vigiar o Claude. Um volante solto, sem mãos, sobre a mesa, com um terminal de código ao fundo"></figure>
+  </div>
+</header>
+
+<main>
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">Em resumo</span>
+  <p>Quem usa o Claude Code costuma ficar olhando cada passo, clica em "permitir" a toda hora e só descobre no fim que a tarefa não estava pronta. <strong>Fora do volante</strong> é um método em três trocas, tirado de uma palestra do time do Claude Code, na Anthropic, e um kit grátis para copiar no seu projeto. Serve para quem usa o Claude Code no dia a dia, com código ou com texto. Para entender, basta ler esta página; para usar o kit, você precisa do Claude Code e do Python 3.</p>
+  <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="Fora do volante: pare de vigiar, pare de aprovar tudo, confira no caminho, a prova real, o processo do início ao fim e o kit grátis" loading="lazy" style="width:100%;display:block"></figure>
+</div></section>
+
+<!-- VIDEO: entra o explicavideo do projeto quando publicado -->
+
+<section id="problema"><div class="wrap">
+  <span class="chip">O problema</span>
+  <h2>Três hábitos que prendem você ao <span class="amb">volante</span></h2>
+  <p class="sub">Você pede uma tarefa e não consegue sair de perto. Cada um destes hábitos parece cuidado, mas custa o seu tempo e ainda deixa o erro passar.</p>
+  <div class="grid g3">
+    <div class="card"><h3>👀 Você vigia</h3><p>Lê cada linha que o Claude escreve, com medo de ele esquecer uma regra. Muitas vezes a regra está num CLAUDE.md enorme, cheio de IMPORTANTE em maiúscula, que mais atrapalha do que ajuda.</p></div>
+    <div class="card"><h3>🖱️ Você aprova tudo</h3><p>Clica em "permitir" comando por comando, e com tanto clique a leitura vira reflexo. No estudo mostrado na palestra, as pessoas pegaram só 14% dos comandos perigosos.</p></div>
+    <div class="card"><h3>🏁 Você descobre no fim</h3><p>O Claude diz "pronto" e para. O erro aparece depois, quando você testa, ou quando o cliente reclama.</p></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>2.500 → 30.000+</b><span>mudanças de código por dia no time do Claude Code: 2.500 em maio, mais de 30.000 em setembro (slide da palestra).</span></div>
+    <div class="stat"><b>14%</b><span>dos comandos perigosos foram pegos pelas pessoas que aprovavam um por um (estudo mostrado na palestra).</span></div>
+    <div class="stat"><b>89%</b><span>dos comandos perigosos foram barrados pelo auto mode, no mesmo estudo mostrado na palestra.</span></div>
+  </div>
+  <p class="fonte">Fonte: palestra de Lydia Hallie, do time do Claude Code na Anthropic (link em <a href="#fonte">De onde vem</a>). O estudo dos 14% e 89% foi mostrado na palestra e não está publicado na página oficial da Anthropic.</p>
+</div></section>
+
+<section id="trocas"><div class="wrap">
+  <span class="chip">O método</span>
+  <h2>As três trocas, num exemplo só: <span class="amb">mudar o login para uma API nova</span></h2>
+  <p class="sub">A mesma tarefa acompanha as três trocas. API é a porta pela qual o seu sistema conversa com outro: aqui, o login deixa a porta velha e passa a usar a nova.</p>
+
+  <div class="troca"><div class="n">1</div><div>
+    <h3>Pare de vigiar: um CLAUDE.md enxuto</h3>
+    <p>O CLAUDE.md é o bilhete que o Claude lê antes de começar. Deixe nele só o que o Claude <strong>não descobre lendo o código</strong>. Para cada linha, pergunte: "ele descobriria isso sozinho?" Se sim, apague.</p>
+    <p>E escreva com calma. Nos modelos de hoje, IMPORTANTE e NUNCA em maiúscula deixam o resultado pior, não melhor.</p>
+    <div class="ex"><b>No login:</b> "clientes antigos ainda entram pelo app do celular, não remova o código antigo" fica, porque o código não conta isso. "O projeto é em Python" sai, porque ele vê sozinho.</div>
+  </div></div>
+
+  <div class="troca"><div class="n">2</div><div>
+    <h3>Pare de aprovar tudo: o teste do desfazer</h3>
+    <p>Deixe o Claude seguir sozinho com o <strong>auto mode</strong>, um modo em que um verificador automático decide o que pode rodar. Para o resto, faça uma pergunta: <strong>"se o Claude errar isso uma vez, dá para voltar atrás?"</strong></p>
+    <p>Dá para voltar (editar código, tudo que o git desfaz): deixe com ele. Não dá (apagar trabalho, ler senha, mandar algo para fora): vira uma <strong>regra de bloqueio</strong> na configuração. Regra no prompt é um pedido; regra na configuração vale antes do auto mode e em todos os modos.</p>
+    <p>A regra olha o texto do comando, não o que ele faz. Por isso o kit liga também o <strong>sandbox</strong>, uma caixa fechada em que o comando só lê as pastas e só fala com os sites que você liberou.</p>
+    <div class="ex"><b>No login:</b> editar o arquivo do login tem volta, então ele segue sozinho. Ler o arquivo <code>.env</code>, onde está a senha da API nova, não tem volta: a regra barra.</div>
+  </div></div>
+
+  <div class="troca"><div class="n">3</div><div>
+    <h3>Confira no caminho: diga como é pronto</h3>
+    <p>"Mude o login para a API nova" pode chegar a lugares bem diferentes que, de longe, parecem todos certos:</p>
+    <div class="vs">
+      <div><strong>Esqueceu</strong>Mudou, mas o login ainda chama a API velha.<span class="r bad">✗ não está pronto</span></div>
+      <div><strong>Deslogou</strong>Mudou e derrubou quem já estava logado.<span class="r bad">✗ não está pronto</span></div>
+      <div><strong>Certo</strong>Usa a API nova e ninguém perdeu a sessão.<span class="r ok">✓ pronto</span></div>
+    </div>
+    <p style="margin-top:1em">Por isso o pedido diz <strong>como é pronto</strong> ("o login usa a API nova e ninguém é deslogado"), e cada parte tem uma checagem. Quem cobra é um <strong>hook</strong>: um script que o Claude Code roda sozinho quando o Claude tenta parar. Se a checagem falhar, o hook responde com o código <strong>2</strong>, que quer dizer "volte e conserte". Com o código 1, o Claude Code só mostra o erro e o Claude segue como se estivesse feito.</p>
+    <div class="ex"><b>No login:</b> o kit traz as três versões. O hook manda o Claude voltar nas duas erradas e deixa parar só na certa.</div>
+  </div></div>
+</div></section>
+
+<section id="prova"><div class="wrap">
+  <span class="chip">A prova</span>
+  <h2>O hook barrou o "pronto", e o Claude <span class="amb">voltou e consertou</span></h2>
+  <p class="sub">Não é teoria. O hook do kit foi rodado de verdade no Claude Code. Para isolar só o hook, a prova usou uma pasta de teste pequena, com um erro de propósito: a função <code>soma</code> subtraía em vez de somar. O mesmo hook cobra o login no passo 7 do guia.</p>
+  <div class="prova">
+    <ol class="tl">
+      <li><b>O Claude disse "pronto" e tentou parar.</b><br><span class="mut">O pedido era só esse: "Responda só: pronto."</span></li>
+      <li><b>O hook rodou o teste, viu a falha e respondeu com 2.</b><br><span class="mut">Junto, mandou a saída do teste dizendo o que quebrou.</span></li>
+      <li><b>O Claude voltou, achou o erro, consertou e conferiu de novo.</b><br><span class="mut">Só parou quando o teste passou.</span></li>
+    </ol>
+    <blockquote>"O teste falhava porque <code>soma()</code> em <code>calc.py</code> subtraía em vez de somar (<code>a - b</code>). Troquei para <code>a + b</code> e rodei a checagem de novo: o teste passa (<code>OK</code>)."</blockquote>
+    <p class="rod">Resposta final do Claude. Claude Code 2.1.326, pela assinatura, 17/11/2026, no modo <code>acceptEdits</code> (aceita edições sem perguntar). Com o código 1 no lugar do 2, o "pronto" do passo 1 teria sido a resposta final. Registro completo: <a href="https://github.com/inematds/fora-do-volante/blob/main/exemplo/PROVA.md" target="_blank" rel="noopener">exemplo/PROVA.md</a>.</p>
+  </div>
+</div></section>
+
+<section id="fonte"><div class="wrap">
+  <span class="chip">De onde vem</span>
+  <h2>Da palestra do time do <span class="amb">Claude Code</span></h2>
+  <p class="sub">O método e os números vêm da palestra "Rethinking Claude Code Best Practices", de Lydia Hallie, do time do Claude Code na Anthropic, no AI Engineer.</p>
+  <div class="grid g2">
+    <div class="card"><h3>🎤 A palestra</h3><p><a href="https://www.youtube.com/watch?v=vlfCjWuv4es" target="_blank" rel="noopener">Assistir no YouTube</a>. Os números 2.500 e 30.000+ estão num slide dela.</p></div>
+    <div class="card"><h3>📏 O que foi conferido</h3><p>Os nomes das configurações (bloqueio, sandbox, hooks, auto mode) foram conferidos na documentação oficial do Claude Code em 17/11/2026. O estudo dos 14% e 89% foi só mostrado na palestra.</p></div>
+  </div>
+  <p class="fonte">Quer usar? A parte técnica abaixo tem o kit e o passo a passo, do início ao fim. <a href="#guia">Ir para o passo a passo ↓</a></p>
+</div></section>
+</main>
+
+<div id="tecnico" class="techhead"><div class="wrap">
+  <span class="chip">Parte técnica</span>
+  <h2>O kit: <span class="amb">para quem quer aplicar no próprio projeto</span></h2>
+  <p class="sub">Daqui para baixo é a parte técnica: os arquivos do kit, como eles funcionam e o processo do início ao fim, com os comandos. Você <strong>não precisa</strong> desta parte para entender o que está acima.</p>
+</div></div>
+
+<div class="techzone">
+<section id="oque"><div class="wrap">
+  <span class="chip">O que é</span>
+  <h2>Os arquivos do kit</h2>
+  <p class="sub">Tudo é texto simples para copiar. Nada instala nada sozinho.</p>
+  <div class="tblwrap"><table class="tbl">
+    <thead><tr><th>Arquivo</th><th>Para quê</th></tr></thead>
+    <tbody>
+      <tr><td><code>kit/.claude/settings.json</code></td><td>Regras de bloqueio (<code>.env</code>, <code>~/.ssh</code>, push forçado, <code>rm -rf</code>, <code>reset --hard</code>), sandbox ligado e hooks <code>Stop</code> e <code>TaskCompleted</code>.</td></tr>
+      <tr><td><code>kit/.claude/hooks/pronto.sh</code></td><td>Roda a checagem; se falhar, sai com 2 e diz o motivo; no máximo 3 voltas seguidas.</td></tr>
+      <tr><td><code>kit/teste-do-desfazer.md</code></td><td>A pergunta que decide o que vai para a lista de bloqueio.</td></tr>
+      <tr><td><code>kit/como-e-pronto.md</code></td><td>Modelo de pedido com "pronto é…" e uma checagem por tarefa.</td></tr>
+      <tr><td><code>kit/CLAUDE.md.exemplo</code></td><td>Um CLAUDE.md enxuto, para usar de modelo.</td></tr>
+      <tr><td><code>ferramentas/conferir_volante.py</code></td><td>Confere um projeto nas três trocas. Só lê, não muda nada.</td></tr>
+      <tr><td><code>exemplo/</code></td><td>O login nas três versões (esqueceu, deslogou, certo) e o <code>PROVA.md</code> com o hook rodando de verdade.</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section id="fluxo"><div class="wrap">
+  <span class="chip">Como funciona</span>
+  <h2>Do pedido ao "pronto" de verdade</h2>
+  <p class="sub">Cada troca vira uma peça da configuração. O caminho de uma tarefa fica assim:</p>
+  <div class="flow">
+    <span>Pedido com "pronto é…"</span><span class="arr">→</span>
+    <span>Claude trabalha no auto mode</span><span class="arr">→</span>
+    <span>Bloqueio + sandbox barram o que não tem volta</span><span class="arr">→</span>
+    <span>Claude tenta parar</span><span class="arr">→</span>
+    <span>Hook roda a checagem</span><span class="arr">→</span>
+    <span>Falhou: sai com 2, volta · Passou: pronto</span>
+  </div>
+  <div class="grid g3" style="margin-top:26px">
+    <div class="card"><h3>Ordem das permissões</h3><p>As regras têm três listas: <code>deny</code> (bloqueia), <code>ask</code> (pergunta) e <code>allow</code> (libera). O Claude Code confere <code>deny</code> primeiro, antes do verificador do auto mode, e em todos os modos, inclusive <code>bypassPermissions</code> (o modo que não pergunta nada).</p></div>
+    <div class="card"><h3>Por que Stop e TaskCompleted</h3><p>São os momentos em que o Claude tenta parar ou fechar uma tarefa. <code>PostToolUse</code> não bloqueia nem com 2, porque a ferramenta já rodou.</p></div>
+    <div class="card"><h3>Proteção contra laço</h3><p>O <code>pronto.sh</code> bloqueia no máximo 3 vezes seguidas (<code>PRONTO_MAX</code>). Depois avisa e deixa parar, para você olhar.</p></div>
+  </div>
+  <p style="margin-top:22px" class="mut">De onde o hook tira a checagem, nesta ordem: a variável <code>PRONTO_CMD</code>, o arquivo <code>.claude/pronto.cmd</code> (uma linha) ou a detecção de <code>npm test</code> / <code>python3 -m unittest</code>. Sem nada para checar, ele não bloqueia.</p>
+<pre><span class="c"># exemplo de .claude/pronto.cmd para o login: testes passam E nenhuma chamada à API velha</span>
+<span class="k">python3 -m unittest discover -s tests -q && ! grep -rn "api_velha" src/</span></pre>
+</div></section>
+
+<section id="pre"><div class="wrap">
+  <span class="chip">Pré-requisitos</span>
+  <h2>O que você precisa</h2>
+  <p class="sub">Pouca coisa. O kit e os testes usam só o que já vem no Python 3.</p>
+  <div class="grid g3">
+    <div class="card"><h3>Claude Code</h3><p>Com o seu projeto aberto nele. O kit foi provado no Claude Code 2.1.326; os comandos <code>/auto-mode-setup</code>, <code>/sandbox</code> e <code>/doctor prompt-audit</code> foram usados nessa versão.</p><pre><span class="k">claude --version</span></pre></div>
+    <div class="card"><h3>Python 3 e git</h3><p>Para o conferidor, os testes e para baixar o kit.</p><pre><span class="k">python3 --version</span>
+<span class="k">git --version</span></pre></div>
+    <div class="card"><h3>Sandbox no Linux/WSL2</h3><p>O sandbox precisa de <code>bubblewrap</code> e <code>socat</code>. No macOS não precisa instalar nada.</p><pre><span class="c"># Debian/Ubuntu</span>
+<span class="k">sudo apt install bubblewrap socat</span></pre></div>
+  </div>
+</div></section>
+
+<section id="guia"><div class="wrap">
+  <span class="chip">Guia de uso · passo a passo</span>
+  <h2>O processo, <span class="amb">do início ao fim</span></h2>
+  <p class="sub">Troque <code>~/meu-projeto</code> pela pasta do seu projeto. ⚙️ = script, 🧠 = você (às vezes junto com o Claude).</p>
+
+  <div class="step"><div class="b">0</div><div>
+    <h3>Baixar o kit <span class="quem">🧠 você</span></h3>
+    <p>Clone o repositório e entre na pasta.</p>
+<pre><span class="k">git clone https://github.com/inematds/fora-do-volante.git</span>
+<span class="k">cd fora-do-volante</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">1</div><div>
+    <h3>Conferir o seu projeto <span class="quem">⚙️ script</span></h3>
+    <p>Mostra o que falta em cada troca. Na primeira vez, é normal aparecerem falhas: é o seu ponto de partida.</p>
+<pre><span class="k">python3 ferramentas/conferir_volante.py ~/meu-projeto</span>  <span class="c"># [falha] troca 2 de 3: ... / fora do volante: N falha(s)</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">2</div><div>
+    <h3>Copiar a configuração e o hook <span class="quem">🧠 você</span></h3>
+    <p>O <code>-n</code> não sobrescreve nada: se o seu projeto já tem um <code>.claude/settings.json</code>, ele fica como está e você junta as chaves do kit à mão. O hook anota as voltas em <code>.claude/.pronto-bloqueios</code>; ponha esse arquivo no <code>.gitignore</code> do projeto.</p>
+<pre><span class="k">cp -rn kit/.claude ~/meu-projeto/</span>
+<span class="k">echo ".claude/.pronto-bloqueios" >> ~/meu-projeto/.gitignore</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">3</div><div>
+    <h3>Dizer qual é a checagem de "pronto" <span class="quem">🧠 você</span></h3>
+    <p>Uma linha com o comando que prova que a tarefa está pronta. Use o modelo de <code>kit/como-e-pronto.md</code> no pedido.</p>
+<pre><span class="k">echo "python3 -m unittest discover -s tests -q" > ~/meu-projeto/.claude/pronto.cmd</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">4</div><div>
+    <h3>Ajustar o auto mode à sua casa <span class="quem">🧠 você + Claude</span></h3>
+    <p>No Claude Code, dentro do seu projeto. Ele rascunha o <code>autoMode.environment</code>: a descrição da sua casa (repositório, serviços, o que é seu) que o verificador do auto mode usa para decidir o que pode rodar. É um comando do próprio Claude Code, não do kit.</p>
+<pre><span class="k">/auto-mode-setup</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">5</div><div>
+    <h3>Ligar e testar o sandbox <span class="quem">🧠 você</span></h3>
+    <p>No Claude Code. No Linux/WSL2, instale antes <code>bubblewrap</code> e <code>socat</code> (pré-requisitos).</p>
+<pre><span class="k">/sandbox</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">6</div><div>
+    <h3>Enxugar o CLAUDE.md <span class="quem">🧠 você + Claude</span></h3>
+    <p>Rode a auditoria e faça o teste "ele descobriria isso lendo o código?" em cada linha. Modelo: <code>kit/CLAUDE.md.exemplo</code>.</p>
+<pre><span class="k">/doctor prompt-audit</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">7</div><div>
+    <h3>Ver o hook cobrar <span class="quem">⚙️ script</span></h3>
+    <p>Roda o hook nas três versões do login. As duas erradas saem com 2; a certa, com 0.</p>
+<pre><span class="k">bash exemplo/rodar.sh</span>
+<span class="c">esqueceu: saída 2 → o Claude volta e conserta</span>
+<span class="c">deslogou: saída 2 → o Claude volta e conserta</span>
+<span class="c">certo: saída 0 → pronto de verdade</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">8</div><div>
+    <h3>Conferir de novo <span class="quem">⚙️ script</span></h3>
+    <p>O mesmo comando do passo 1. Terminou quando aparece <code>fora do volante: ok</code>. O conferidor lê os arquivos (regras de bloqueio, sandbox ligado, hook de parada, CLAUDE.md); ele não sabe se você rodou os passos 4 e 5 dentro do Claude Code.</p>
+<pre><span class="k">python3 ferramentas/conferir_volante.py ~/meu-projeto</span>  <span class="c"># fora do volante: ok</span></pre>
+  </div></div>
+</div></section>
+
+<section id="testes"><div class="wrap">
+  <span class="chip">Testes</span>
+  <h2>O próprio kit se confere</h2>
+  <p class="sub">11 testes cobrem o hook (sai com 2, com 0, para depois do máximo, lê o <code>pronto.cmd</code>), o exemplo do login e o conferidor. Só precisam do Python 3.</p>
+<pre><span class="k">python3 -m unittest discover -s tests -v</span>   <span class="c"># Ran 11 tests ... OK</span></pre>
+</div></section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Claude Code</div><div class="pill">bash</div><div class="pill">Python 3</div><div class="pill">MIT</div>
+    <p style="margin-top:18px">Fora do volante · grátis no inema.club, direto na internet ·
+      <a href="https://github.com/inematds/fora-do-volante">inematds/fora-do-volante</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='fora-do-volante-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    try{ if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; } }catch(e){}
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      try{ localStorage.setItem(KEY, light?'light':'dark'); }catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>
