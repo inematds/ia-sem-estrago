@@ -240,7 +240,7 @@
       <div><strong>Cerró la sesión</strong>Hizo el cambio y desconectó a quienes ya habían iniciado sesión.<span class="r bad">✗ no está terminado</span></div>
       <div><strong>Correcto</strong>Usa la API nueva y nadie perdió su sesión.<span class="r ok">✓ terminado</span></div>
     </div>
-    <p style="margin-top:1em">Por eso el pedido define <strong>qué significa terminado</strong> ("el inicio de sesión usa la API nueva y nadie cierra su sesión") y cada parte tiene una verificación. Quien lo exige es un <strong>hook</strong>: un script que Claude Code ejecuta por su cuenta cuando Claude intenta detenerse. Si la verificación falla, el hook responde con el código <strong>2</strong>, que significa "vuelve y corrige". Con el código 1, Claude Code solo muestra el error y Claude sigue como si estuviera listo.</p>
+    <p style="margin-top:1em">Por eso el pedido define <strong>qué significa terminado</strong> ("el inicio de sesión usa la API nueva y nadie cierra su sesión") y cada parte tiene una verificación. Quien lo exige es un <strong>hook</strong>: un script que Claude Code ejecuta por su cuenta cuando Claude intenta detenerse. Si la verificación falla, el hook responde con el código <strong>2</strong>, que significa "vuelve y corrige". Con el código 1, Claude Code solo muestra el error y Claude sigue como si estuviera terminado.</p>
     <div class="ex"><b>En el inicio de sesión:</b> el kit incluye las tres versiones. El hook hace que Claude vuelva a las dos incorrectas y solo le permite detenerse cuando la versión es correcta.</div>
   </div></div>
 </div></section>
@@ -251,19 +251,19 @@
   <p class="sub">No es teoría. El hook del kit se ejecutó de verdad en Claude Code. Para aislar solo el hook, la prueba usó una carpeta de prueba pequeña con un error intencional: la función <code>soma</code> restaba en vez de sumar. El mismo hook verifica el inicio de sesión en el paso 7 de la guía.</p>
   <div class="prova">
     <ol class="tl">
-      <li><b>Claude dijo "listo" e intentó detenerse.</b><br><span class="mut">El pedido era solo este: "Responda só: listo."</span></li>
+      <li><b>Claude dijo "terminado" e intentó detenerse.</b><br><span class="mut">El pedido era solo este: "Responde solo: terminado."</span></li>
       <li><b>El hook ejecutó la prueba, detectó el fallo y respondió con 2.</b><br><span class="mut">También envió la salida de la prueba, que indicaba qué había fallado.</span></li>
       <li><b>Claude volvió, encontró el error, lo corrigió y volvió a verificar.</b><br><span class="mut">Solo se detuvo cuando pasó la prueba.</span></li>
     </ol>
     <blockquote>"La prueba fallaba porque <code>soma()</code> en <code>calc.py</code> restaba en vez de sumar (<code>a - b</code>). Lo cambié por <code>a + b</code> y volví a ejecutar la verificación: la prueba pasa (<code>OK</code>)."</blockquote>
-    <p class="rod">Respuesta final de Claude. Claude Code 2.1.326, con la suscripción, 17/11/2026, en modo <code>acceptEdits</code> (acepta ediciones sin preguntar). Con el código 1 en lugar del 2, el "listo" de la primera respuesta habría sido la respuesta final. Resumen de la prueba: <a href="https://github.com/inematds/fora-do-volante/blob/main/exemplo/PROVA.md" target="_blank" rel="noopener">exemplo/PROVA.md (en portugués)</a>.</p>
+    <p class="rod">Respuesta final de Claude. Claude Code 2.1.326, con la suscripción, 17/11/2026, en modo <code>acceptEdits</code> (acepta ediciones sin preguntar). Con el código 1 en lugar del 2, el "terminado" de la primera respuesta habría sido la respuesta final. Resumen de la prueba: <a href="https://github.com/inematds/fora-do-volante/blob/main/exemplo/PROVA.md" target="_blank" rel="noopener">exemplo/PROVA.md (en portugués)</a>.</p>
   </div>
 </div></section>
 
 <section id="fonte"><div class="wrap">
   <span class="chip">De dónde viene</span>
   <h2>De la charla del equipo de <span class="amb">Claude Code</span></h2>
-  <p class="sub">El método y las cifras vienen de la charla "Rethinking Claude Code Best Practices", de Lydia Hallie, del equipo de Claude Code en Anthropic, en AI Engineer.</p>
+  <p class="sub">El método y las cifras vienen de la charla "Rethinking Claude Code Best Practices", de Lydia Hallie, del equipo de Claude Code en Anthropic, en la conferencia AI Engineer.</p>
   <div class="grid g2">
     <div class="card"><h3>🎤 La charla</h3><p><a href="https://www.youtube.com/watch?v=vlfCjWuv4es" target="_blank" rel="noopener">Ver en YouTube</a>. Las cifras 2.500 y 30.000+ aparecen en una diapositiva.</p></div>
     <div class="card"><h3>📏 Qué se verificó</h3><p>Los nombres de las configuraciones (bloqueo, sandbox, hooks, auto mode) se verificaron en la documentación oficial de Claude Code el 17/11/2026. El estudio del 14% y el 89% solo se mostró en la charla.</p></div>
@@ -367,7 +367,7 @@
 
   <div class="step"><div class="b">4</div><div>
     <h3>Activar auto mode y adaptarlo a tu entorno <span class="quem">🧠 tú + Claude</span></h3>
-    <p>Desde la versión 2.1.283, Claude Code ya se inicia en auto mode. Si la barra de estado no muestra <code>⏵⏵ auto mode on</code>, ábrelo con la opción de abajo o presiona Shift+Tab hasta que aparezca. Requiere un modelo compatible, y una empresa puede desactivarlo para todos.</p>
+    <p>Desde la versión 2.1.283, Claude Code ya se inicia en auto mode (verificado el 17/11/2026). Si la barra de estado no muestra <code>⏵⏵ auto mode on</code>, ábrelo con la opción de abajo o presiona Shift+Tab hasta que aparezca. Requiere un modelo compatible, y una empresa puede desactivarlo para todos.</p>
     <p>Después, ejecuta <code>/auto-mode-setup</code>: prepara un borrador de <code>autoMode.environment</code>, la descripción de tu entorno (repositorio, servicios, qué es tuyo) que el verificador de auto mode usa para decidir qué puede ejecutarse. Este comando está disponible en los planes Pro, Max, Ultra, Team y Enterprise, y con una clave de Claude Console. Ambos son parte de Claude Code, no del kit.</p>
 <pre><span class="k">claude --permission-mode auto</span>   <span class="c"># o Shift+Tab hasta "⏵⏵ auto mode on"</span>
 <span class="k">/auto-mode-setup</span></pre>
@@ -387,7 +387,7 @@
 
   <div class="step"><div class="b">7</div><div>
     <h3>Ver cómo el hook exige la verificación <span class="quem">⚙️ script</span></h3>
-    <p>Ejecuta el hook en las tres versiones del inicio de sesión. Las dos incorrectas terminan con 2; la correcta, con 0.</p>
+    <p>De vuelta en la carpeta del kit, ejecuta el hook en las tres versiones del inicio de sesión. Las dos incorrectas salen con 2; la correcta, con 0.</p>
 <pre><span class="k">bash exemplo/rodar.sh</span>
 <span class="c">esqueceu: saída 2 → o Claude volta e conserta</span>
 <span class="c">deslogou: saída 2 → o Claude volta e conserta</span>

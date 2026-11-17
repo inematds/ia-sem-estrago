@@ -263,7 +263,7 @@
 <section id="fonte"><div class="wrap">
   <span class="chip">Where it comes from</span>
   <h2>From a talk by the <span class="amb">Claude Code</span> team</h2>
-  <p class="sub">The method and numbers come from “Rethinking Claude Code Best Practices,” a talk by Lydia Hallie, from the Claude Code team at Anthropic, at AI Engineer.</p>
+  <p class="sub">The method and numbers come from “Rethinking Claude Code Best Practices,” a talk by Lydia Hallie, from the Claude Code team at Anthropic, at the AI Engineer conference.</p>
   <div class="grid g2">
     <div class="card"><h3>🎤 The talk</h3><p><a href="https://www.youtube.com/watch?v=vlfCjWuv4es" target="_blank" rel="noopener">Watch on YouTube</a>. The 2,500 and 30,000+ figures are on one of its slides.</p></div>
     <div class="card"><h3>📏 What was checked</h3><p>The settings names (blocking, sandbox, hooks, auto mode) were checked against the official Claude Code documentation on Nov 17, 2026. The 14% and 89% study was only shown in the talk.</p></div>
@@ -367,7 +367,7 @@
 
   <div class="step"><div class="b">4</div><div>
     <h3>Turn on auto mode and adapt it to your setup <span class="quem">🧠 you + Claude</span></h3>
-    <p>Starting with version 2.1.283, Claude Code starts in auto mode. If the status bar doesn’t show <code>⏵⏵ auto mode on</code>, launch it with the option below or press Shift+Tab until it appears. It requires a compatible model, and a company can turn it off for everyone.</p>
+    <p>Starting with version 2.1.283, Claude Code starts in auto mode (checked on Nov 17, 2026). If the status bar doesn’t show <code>⏵⏵ auto mode on</code>, launch it with the option below or press Shift+Tab until it appears. It requires a compatible model, and a company can turn it off for everyone.</p>
     <p>Then run <code>/auto-mode-setup</code>: it drafts <code>autoMode.environment</code>, a description of your setup (repository, services, what belongs to you) that the auto mode checker uses to decide what can run. This command is available on Pro, Max, Ultra, Team, and Enterprise plans and with a Claude Console key. Both are part of Claude Code, not the kit.</p>
 <pre><span class="k">claude --permission-mode auto</span>   <span class="c"># or press Shift+Tab until "⏵⏵ auto mode on" appears</span>
 <span class="k">/auto-mode-setup</span></pre>
@@ -387,7 +387,7 @@
 
   <div class="step"><div class="b">7</div><div>
     <h3>See the hook enforce the check <span class="quem">⚙️ script</span></h3>
-    <p>Runs the hook against all three login versions. The two wrong ones exit with 2; the correct one exits with 0.</p>
+    <p>Back in the kit folder, run the hook on the three login versions. The two incorrect ones exit with 2; the correct one, with 0.</p>
 <pre><span class="k">bash exemplo/rodar.sh</span>
 <span class="c">esqueceu: saída 2 → o Claude volta e conserta</span>
 <span class="c">deslogou: saída 2 → o Claude volta e conserta</span>
