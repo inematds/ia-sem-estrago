@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI works on its own without causing damage you can’t undo — free kit for Claude Code</title>
-<meta name="description" content="A free kit for Claude Code: one guard blocks actions you can’t undo (like deleting a folder or reading a password), and a test keeps AI from saying it’s done too soon. You can step away.">
+<meta name="description" content="A free kit for Claude Code: a safety lock blocks actions you can’t undo, like deleting a folder or reading a password. A test keeps the AI from saying it’s done too soon. You can step away.">
 <link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/ia-sem-estrago/guia/">
 <link rel="alternate" hreflang="en" href="https://inematds.github.io/ia-sem-estrago/guia/en/">
 <link rel="alternate" hreflang="es" href="https://inematds.github.io/ia-sem-estrago/guia/es/">
@@ -159,13 +159,14 @@
     <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
   </span>
   <div class="links">
-    <a class="sec" href="#explicado">What you gain</a>
+    <a class="sec" href="#explicado">The benefit</a>
     <a class="sec" href="#dia">Your day</a>
     <a class="sec" href="#como">How it works</a>
     <a class="sec" href="#comecar">How to start</a>
+    <a class="sec" href="#base">Anthropic’s sources</a>
     <a class="sec" href="#prova">The proof</a>
     <span class="lang"><a href="../">PT</a><a class="on" href="./">EN</a><a href="../es/">ES</a></span>
-    <button class="tgl" id="themeToggle" aria-label="Switch theme" title="Switch theme">🌙</button>
+    <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
     <a class="btn" href="https://github.com/inematds/ia-sem-estrago" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
@@ -174,8 +175,8 @@
   <div class="glow"></div>
   <div class="wrap">
     <div>
-      <span class="chip">Free kit for Claude Code users</span>
-      <h1>AI works on its own and <span class="amb">doesn’t cause damage you can’t undo</span></h1>
+      <span class="chip">Based on Anthropic’s documentation and engineers · free kit</span>
+      <h1>AI works on its own and <span class="amb">won’t cause damage you can’t undo</span></h1>
       <p class="lead">Give it a task and go do something else. When you come back, the work is done and tested. No folders were deleted, no passwords were read, and Claude didn’t say “done” too soon.</p>
       <div class="cta">
         <a class="btn" href="#explicado">What you get</a>
@@ -189,45 +190,58 @@
 <main>
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">In one sentence</span>
-  <p><strong>The kit adds two safeguards to Claude Code:</strong> a <strong>guard</strong> that blocks actions you can’t undo (like deleting a folder, reading a password, or forcing a Git push) in every mode, and a <strong>test</strong> that keeps Claude working until the task passes. Then you can turn off “allow” and step away.</p>
-  <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="No-Damage AI: the problem with watching AI, what changes in your day, the guard against actions you can’t undo, the test before done, ask AI to analyze, free at inema.club" loading="lazy" style="width:100%;display:block"></figure>
+  <p><strong>The kit adds two protections to Claude Code:</strong> a <strong>safety lock</strong> that blocks actions you can’t undo (deleting a folder, reading a password, forcing a git push) in every mode, and a <strong>test</strong> that keeps Claude working until the task passes. Then you can turn off permission prompts and step away. We didn’t make any of this up: each part follows the <strong>official Claude Code documentation</strong> and advice published by <strong>Anthropic’s engineers</strong>, the people who build Claude (<a href="#base">see the sources</a>).</p>
+  <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="No-Damage AI: the problem with watching AI, what changes in your day, the safety lock for actions you can’t undo, the test before saying done, ask AI to review, free on inema.club" loading="lazy" style="width:100%;display:block"></figure>
 </div></section>
 
 <section id="explicado"><div class="wrap">
-  <span class="chip">What you gain</span>
+  <span class="chip">The benefit</span>
   <h2>Before and after the <span class="amb">kit</span></h2>
   <div class="grid g2">
-    <div class="card"><h3>😩 Without the kit</h3><p>You sit in front of the screen and click “allow” for every command. After so many clicks, you stop reading. In a study shared by the Claude Code team, people who approved commands one by one caught only <strong>14%</strong> of dangerous commands.</p><p>Claude says “done,” and the mistake only shows up later, when you test it or a client complains.</p></div>
-    <div class="card"><h3>😌 With the kit</h3><p>You don’t click anything. You go do something else. Actions you can’t undo are <strong>always</strong> blocked, in every mode, even if the AI tries.</p><p>Claude only stops when the test passes. If it fails, Claude goes back and fixes the problem.</p></div>
+    <div class="card"><h3>😩 Without the kit</h3><p>You stay in front of the screen, clicking “allow” for every command. After so many clicks, you stop reading. In a study shared by the Claude Code team, people who approved commands one by one caught only <strong>14%</strong> of dangerous commands.</p><p>Claude says “done,” and the mistake only shows up later, when you test it or a client complains.</p></div>
+    <div class="card"><h3>😌 With the kit</h3><p>You don’t click anything. You go do something else. Actions you can’t undo are <strong>always</strong> blocked, in every mode, even if the AI tries.</p><p>Claude only stops when the test passes. If it fails, Claude goes back and fixes it.</p></div>
   </div>
   <div class="grid g3" style="margin-top:16px">
-    <div class="card"><h3>⏱️ Your time back</h3><p>You don’t have to babysit AI. The task moves forward while you do something else.</p></div>
-    <div class="card"><h3>🔒 No damage you can’t undo</h3><p>Git can undo code mistakes. A deleted folder, a leaked password, or overwritten Git history can’t be undone. Those actions stay blocked.</p></div>
-    <div class="card"><h3>✅ Tested work</h3><p>“Done” means done. You stop finding mistakes at the end.</p></div>
+    <div class="card"><h3>⏱️ Get your time back</h3><p>You stop babysitting the AI. The task keeps moving while you do something else.</p></div>
+    <div class="card"><h3>🔒 No damage you can’t undo</h3><p>You can undo a code mistake with git. You can’t undo a deleted folder, a leaked password, or overwritten git history. Those actions stay blocked.</p></div>
+    <div class="card"><h3>✅ Work that’s been tested</h3><p>“Done” means done. You don’t discover the mistake at the end.</p></div>
   </div>
   <div class="grid g3" style="margin-top:16px">
-    <div class="card"><h3>👤 Who it’s for</h3><p>Anyone who uses Claude Code for everyday work, with code or text. You need Claude Code and Python 3 to install it.</p></div>
-    <div class="card"><h3>🧪 Tested for real</h3><p>We hid a bug in the code and asked Claude only to “say done.” The test blocked it. Claude found the bug, fixed it, and only then stopped (<a href="#prova">see the proof</a>).</p></div>
-    <div class="card"><h3>🎁 Free</h3><p>The kit on GitHub, this guide in Portuguese, English, and Spanish, and the source: a talk by the Claude Code team at Anthropic, who work this way (<a href="#fonte">source</a>).</p></div>
+    <div class="card"><h3>👤 Who it’s for</h3><p>People who use Claude Code every day, for code or writing. You need Claude Code and Python 3 to install it.</p></div>
+    <div class="card"><h3>🧪 Tested for real</h3><p>We hid a mistake in some code and asked Claude to “just say done.” The test stopped it. Claude found and fixed the mistake, then stopped (<a href="#prova">see the proof</a>).</p></div>
+    <div class="card"><h3>🎁 Free</h3><p>The kit is on GitHub, this guide is available in Portuguese, English, and Spanish, and everything is based on what Anthropic publishes and recommends (<a href="#base">sources</a>).</p></div>
   </div>
 </div></section>
 
 <!-- VIDEO: entra o explicavideo do projeto quando publicado -->
 
-<section id="dia"><div class="wrap">
-  <span class="chip">In your day-to-day</span>
-  <h2>How this changes your <span class="amb">day</span></h2>
-  <p class="sub">You don’t need to know how to code to see the difference. Here are three common ways people use AI at work.</p>
+<section id="base"><div class="wrap">
+  <span class="chip">Where it comes from</span>
+  <h2>We didn’t make this up: it’s what <span class="amb">Anthropic recommends</span></h2>
+  <p class="sub">Anthropic is the company behind Claude. This kit brings together, in one place and ready to use, advice its engineers have published and guidance from the official Claude Code documentation.</p>
   <div class="grid g3">
-    <div class="card"><h3>🗂️ “Organize the project files”</h3><p><strong>Today:</strong> you watch, worried that AI might delete the wrong folder.</p><p><strong>With the kit:</strong> it can move, rename, and organize files freely. Deleting a whole folder at once is blocked, so the worst won’t happen.</p></div>
-    <div class="card"><h3>🌐 “Fix the website form”</h3><p><strong>Today:</strong> AI says “done.” You check, and the form is still broken. You ask again, and again.</p><p><strong>With the kit:</strong> before stopping, a test fills out the form. If it fails, AI goes back and fixes it. “Done” means it has been tested.</p></div>
-    <div class="card"><h3>🔑 “Connect the system to the new API”</h3><p><strong>Today:</strong> the API password is in a project file, and you hope AI won’t read it or send it outside.</p><p><strong>With the kit:</strong> the password file and your access keys stay out of AI’s reach. It does the work without seeing the password.</p></div>
+    <div class="card"><h3>🎤 Claude Code engineers</h3><p>In a talk, Lydia Hallie, from the team that builds Claude Code, showed how they work: they stop watching every step, block actions they can’t undo, and use tests to decide when work is done. This helped them go from <strong>2,500 to more than 30,000</strong> code changes a day.</p><p><a href="https://www.youtube.com/watch?v=vlfCjWuv4es" target="_blank" rel="noopener">Watch the talk</a></p></div>
+    <div class="card"><h3>📊 What Anthropic published</h3><p>People who approve every action by hand end up accepting <strong>93%</strong> of requests. Approval fatigue makes people stop reading. Anthropic’s internal records also include real cases of AI deleting project branches, sending an access key outside the company, and changing a production database.</p><p><a href="https://www.anthropic.com/research/claude-code-auto-mode" target="_blank" rel="noopener">Article: How we built auto mode</a></p></div>
+    <div class="card"><h3>📦 The sandbox</h3><p>Anthropic also showed that the Claude Code sandbox cut permission requests by <strong>84%</strong> while improving safety. The kit turns it on for you.</p><p><a href="https://www.anthropic.com/research/claude-code-sandboxing" target="_blank" rel="noopener">Article: Making Claude Code safer with sandboxing</a></p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>📚 Every part of the kit is in the official documentation</h3><p><strong>The safety lock</strong> uses Claude Code’s deny rules (<a href="https://code.claude.com/docs/en/permissions" target="_blank" rel="noopener">Permissions</a>). <strong>The sandbox</strong> is Claude Code’s sandbox feature (<a href="https://code.claude.com/docs/en/sandboxing" target="_blank" rel="noopener">Sandboxing</a>). <strong>The test before “done”</strong> is a hook that runs when the AI tries to finish (<a href="https://code.claude.com/docs/en/hooks" target="_blank" rel="noopener">Hooks</a>). And the way to give instructions follows the <a href="https://code.claude.com/docs/en/best-practices" target="_blank" rel="noopener">Claude Code best practices</a>. All checked on 11/17/2026.</p></div>
+  <p class="fonte">The 14% and 89% figures in the talk (people who approve one by one versus auto mode) were shared by the speaker and are not published on Anthropic’s website. The 93% and 84% figures above are in official articles.</p>
+</div></section>
+
+<section id="dia"><div class="wrap">
+  <span class="chip">In your day</span>
+  <h2>How this changes your <span class="amb">day</span></h2>
+  <p class="sub">You don’t need to write code to see the difference. Here are three common ways people use AI at work.</p>
+  <div class="grid g3">
+    <div class="card"><h3>🗂️ “Organize the project files”</h3><p><strong>Today:</strong> You watch, afraid the AI will delete the wrong folder.</p><p><strong>With the kit:</strong> It can move, rename, and organize files. Deleting a whole folder at once is blocked, so the worst can’t happen.</p></div>
+    <div class="card"><h3>🌐 “Fix the website form”</h3><p><strong>Today:</strong> The AI says “done,” you check, and the form is still broken. You ask again, and again.</p><p><strong>With the kit:</strong> Before stopping, a test fills out the form. If it fails, the AI goes back and fixes it. You get work that’s been tested.</p></div>
+    <div class="card"><h3>🔑 “Connect the system to the new API”</h3><p><strong>Today:</strong> The API password is in a project file, and you hope the AI won’t read it or send it outside.</p><p><strong>With the kit:</strong> Password files and access keys stay out of reach. The AI does the work without seeing the password.</p></div>
   </div>
   <div class="prova" style="margin-top:22px">
     <ol class="tl">
-      <li><b>9:00 a.m. · you give it the task</b><br><span class="mut">and say what “done” means: “the form sends the email, and it arrives.”</span></li>
-      <li><b>9:05 a.m. · you go do something else</b><br><span class="mut">a meeting, lunch, another task. There’s no “allow” button waiting for you.</span></li>
-      <li><b>10:00 a.m. · you come back</b><br><span class="mut">the work is done, the test passed, and nothing you can’t undo was touched.</span></li>
+      <li><b>9:00 a.m. · you give the task</b><br><span class="mut">and say what “done” means: “the form sends and the email arrives.”</span></li>
+      <li><b>9:05 a.m. · you go do something else</b><br><span class="mut">a meeting, lunch, another task. No “allow” button is waiting for you.</span></li>
+      <li><b>10:00 a.m. · you come back</b><br><span class="mut">the task is done, the test passed, and nothing you can’t undo was touched.</span></li>
     </ol>
   </div>
 </div></section>
@@ -236,83 +250,71 @@
 
 <section id="como"><div class="wrap">
   <span class="chip">How it works</span>
-  <h2>Two safeguards, <span class="amb">no jargon</span></h2>
-  <p class="sub">The kit doesn’t make AI smarter. It puts two limits around it, so you can step away.</p>
+  <h2>Two protections, <span class="amb">plain and simple</span></h2>
+  <p class="sub">The kit doesn’t make the AI smarter. It sets two limits around it, so you can step away.</p>
   <div class="grid g2">
-    <div class="card"><h3>🔒 1. The guard</h3><p>It works like a locked room: AI can move around the house but can’t go in there. To decide what stays locked, the kit asks one question: <strong>“If AI gets this wrong once, can you undo it?”</strong></p><p><strong>If you can undo it</strong> (edit text or change code that Git tracks), it’s allowed.<br><strong>If you can’t</strong> (delete a whole folder, read passwords, or erase the project history), it stays locked in every mode, even if AI tries.</p></div>
-    <div class="card"><h3>✅ 2. The test before “done”</h3><p>It works like an inspector at the end of a production line. You say once what “done” means, and a test checks every time AI tries to finish.</p><p><strong>It passes:</strong> AI delivers the work.<br><strong>It fails:</strong> AI gets the reason, goes back, and fixes it. To prevent an endless loop, it stops and calls you after 3 tries.</p></div>
+    <div class="card"><h3>🔒 1. The safety lock</h3><p>It works like a locked door: the AI can move around the house but can’t go into that room. To decide what stays locked, the kit asks one question: <strong>“If the AI gets this wrong once, can I undo it?”</strong></p><p><strong>Yes, you can undo it</strong> (edit text, change code that git tracks): it stays allowed.<br><strong>No, you can’t</strong> (delete a whole folder, read passwords, erase the project’s git history): it stays locked in every mode, even if the AI tries.</p></div>
+    <div class="card"><h3>✅ 2. The test before “done”</h3><p>It works like an inspector at the end of a production line. You say once what “done” means, and a test checks it every time the AI tries to finish.</p><p><strong>Pass:</strong> it delivers the work.<br><strong>Fail:</strong> it gets the reason, goes back, and fixes it. To keep it from going in circles, it stops and calls you after 3 tries.</p></div>
   </div>
-  <div class="card" style="margin-top:16px"><h3>🤝 What about everything else?</h3><p>Actions you can undo happen on their own, without asking at every step. Claude Code’s automatic mode decides. If AI makes a mistake, you can undo it. The kit doesn’t promise AI will never make a mistake. It promises that mistakes you can’t fix won’t happen, and that “done” means done.</p></div>
+  <div class="card" style="margin-top:16px"><h3>🤝 What about everything else?</h3><p>Anything you can undo runs on its own, without asking permission at every step. Claude Code’s auto mode decides. If the AI makes a mistake, you can undo it. The kit doesn’t promise an AI that never makes mistakes. It promises that mistakes you can’t fix won’t happen, and that “done” means done.</p></div>
 </div></section>
 
 <section id="comecar"><div class="wrap">
   <span class="chip">How to start</span>
   <h2>Ask your AI to <span class="amb">review the kit</span></h2>
-  <p class="sub">You don’t need to install anything by hand or understand the files. AI reads the kit, looks at your project, and tells you what might help.</p>
+  <p class="sub">You don’t need to install anything by hand or understand the files. The AI reads the kit, looks at your project, and tells you what makes sense for you.</p>
   <div class="grid g3">
-    <div class="card"><h3>1. Open your AI in the project</h3><p>Open Claude Code or Codex in the folder where you work on your project.</p></div>
-    <div class="card"><h3>2. Paste the request below</h3><p>It asks AI to read the kit, look at your project, and explain things in plain English without changing anything yet.</p></div>
-    <div class="card"><h3>3. Say yes to what makes sense</h3><p>AI shows you a plan. Approve what you want, and it installs only those parts.</p></div>
+    <div class="card"><h3>1. Open your AI in the project</h3><p>Open Claude Code or Codex in the project folder you work in.</p></div>
+    <div class="card"><h3>2. Paste the request below</h3><p>It asks the AI to read the kit, look at your project, and explain it in plain English without changing anything yet.</p></div>
+    <div class="card"><h3>3. Say yes to what makes sense</h3><p>The AI shows you a plan. Approve what you want, and it installs only that.</p></div>
   </div>
   <div class="pedido" style="margin-top:20px;position:relative">
 <pre id="pedidoTxt" style="white-space:pre-wrap">Read the “No-Damage AI” kit at https://github.com/inematds/ia-sem-estrago (the README explains everything, including installation).
 Then look at this project and answer in plain English:
-1. What could not be undone if you made a mistake here (deleting things, passwords, sending something outside)?
-2. What test or check proves that a task is complete in this project?
+1. What could not be undone if you made a mistake here (deleting files, passwords, sending something outside)?
+2. What test or check proves that a task is done in this project?
 3. Which parts of the kit would help me, and which would not?
 Don’t change anything yet. Show me the plan and wait for me to say yes.</pre>
     <button class="btn" id="copiarPedido" style="margin-top:10px">Copy the request</button>
   </div>
-  <p class="mut" style="margin-top:16px">The kit is built for <strong>Claude Code</strong>: the guards and the test are its settings. <strong>Codex</strong> can also read the kit and tell you whether it fits your project.</p>
-  <div class="card" style="margin-top:16px"><h3>🛠️ Technical user who prefers to install it by hand?</h3><p>Step-by-step installation, with the commands, files, and tests, is in the GitHub README.</p><p><a class="btn ghost" href="https://github.com/inematds/ia-sem-estrago/blob/main/README.en.md" target="_blank" rel="noopener">View the technical installation guide</a></p></div>
+  <p class="mut" style="margin-top:16px">The kit is built for <strong>Claude Code</strong>: the safety lock and test are its settings. <strong>Codex</strong> can also read the kit and tell you if it fits your project.</p>
+  <div class="card" style="margin-top:16px"><h3>🛠️ Prefer to install it yourself?</h3><p>The step-by-step technical installation, with commands, files, and tests, is in the GitHub README.</p><p><a class="btn ghost" href="https://github.com/inematds/ia-sem-estrago/blob/main/README.en.md" target="_blank" rel="noopener">See the technical installation</a></p></div>
 </div></section>
 
 <section id="prova"><div class="wrap">
   <span class="chip">The proof</span>
-  <h2>We tested it for real: AI said “done” too soon, and <span class="amb">the kit stopped it</span></h2>
-  <p class="sub">We hid a bug on purpose in a small project: an addition that subtracted. Then we gave Claude one instruction: “reply only: done.”</p>
+  <h2>We tested it for real: the AI said “done” too soon, and <span class="amb">the kit stopped it</span></h2>
+  <p class="sub">We deliberately hid a mistake in a small project: an addition problem that subtracted instead. Then we asked Claude to do just one thing: “reply only: done.”</p>
   <div class="prova">
     <ol class="tl">
-      <li><b>Claude said “done” and tried to stop.</b><br><span class="mut">Without the kit, the conversation would have ended there, with the bug hidden.</span></li>
-      <li><b>The test ran, found that the addition was wrong, and told Claude to go back.</b><br><span class="mut">It also explained what went wrong.</span></li>
-      <li><b>Claude found the bug, fixed it, and checked again.</b><br><span class="mut">It stopped only after the test passed.</span></li>
+      <li><b>Claude said “done” and tried to stop.</b><br><span class="mut">Without the kit, the conversation would have ended there, with the mistake hidden.</span></li>
+      <li><b>The test ran, caught the wrong answer, and told Claude to go back.</b><br><span class="mut">It also explained what went wrong.</span></li>
+      <li><b>Claude found the mistake, fixed it, and checked again.</b><br><span class="mut">It only stopped when the test passed.</span></li>
     </ol>
-    <blockquote>“The test failed because the addition subtracted instead of adding. I changed it and ran the check again: the test passes.”</blockquote>
-    <p class="rod">Claude’s final response, in Claude Code using the subscription, on November 17, 2026. Full record: <a href="https://github.com/inematds/ia-sem-estrago/blob/main/exemplo/PROVA.md" target="_blank" rel="noopener">PROVA.md</a>.</p>
+    <blockquote>“The test failed because the addition was subtracting instead of adding. I changed it and ran the check again: the test passes.”</blockquote>
+    <p class="rod">Claude’s final answer, using Claude Code with a subscription, on 11/17/2026. Full record: <a href="https://github.com/inematds/ia-sem-estrago/blob/main/exemplo/PROVA.md" target="_blank" rel="noopener">PROVA.md</a>.</p>
   </div>
-</div></section>
-
-<section id="fonte"><div class="wrap">
-  <span class="chip">Where it comes from</span>
-  <h2>The team behind Claude Code <span class="amb">already works this way</span></h2>
-  <p class="sub">The idea comes from a talk by Lydia Hallie, from the Claude Code team at Anthropic. They stopped watching AI, blocked actions they couldn’t undo, and started checking “done” with tests.</p>
-  <div class="stats">
-    <div class="stat"><b>2,500 → 30,000+</b><span>code changes per day on the Claude Code team, from May to September (talk slide).</span></div>
-    <div class="stat"><b>14%</b><span>of dangerous commands were caught by people who approved them one by one. Clicking “allow” all the time doesn’t protect you.</span></div>
-    <div class="stat"><b>89%</b><span>were blocked by automatic mode. The rest are why the guard matters: safety from actions you can’t undo shouldn’t depend on luck.</span></div>
-  </div>
-  <p class="fonte">Source: <a href="https://www.youtube.com/watch?v=vlfCjWuv4es" target="_blank" rel="noopener">talk on YouTube</a>. The 14% and 89% study was shown in the talk and is not published on Anthropic’s official page.</p>
 </div></section>
 
 <section id="faq"><div class="wrap">
   <span class="chip">Common questions</span>
   <h2>Before you <span class="amb">start</span></h2>
   <div class="grid g2">
-    <div class="card"><h3>Do I need to know how to code?</h3><p>No. Paste the request, read the plan AI shows you, and say yes or no. AI handles the installation.</p></div>
-    <div class="card"><h3>Is it only for code?</h3><p>No. It works for any job AI does in your files: writing, spreadsheets, reports, and websites. For a report, “done” might mean “every number matches the spreadsheet.”</p></div>
-    <div class="card"><h3>Will AI be out of control?</h3><p>There are fewer clicks, not less control. Actions you can’t undo stay locked, and you decide what “done” means.</p></div>
-    <div class="card"><h3>What if I already have my own settings?</h3><p>The kit doesn’t delete anything you have. The request tells AI to show the plan first, then it adds what you approve to your existing setup.</p></div>
+    <div class="card"><h3>Do I need to know how to code?</h3><p>No. Paste the request, read the plan the AI shows you, and say yes or no. The AI installs it.</p></div>
+    <div class="card"><h3>Is it only for code?</h3><p>No. It works for any task the AI does in your files: writing, spreadsheets, reports, websites. For a report, “done” could mean “every number matches the spreadsheet.”</p></div>
+    <div class="card"><h3>Does the AI lose control?</h3><p>There are fewer clicks, not less control. Actions you can’t undo stay locked, and you decide what “done” means.</p></div>
+    <div class="card"><h3>What if I already have my own settings?</h3><p>The kit doesn’t delete anything. The request tells the AI to show you a plan first, then it adds what you approve to your existing settings.</p></div>
     <div class="card"><h3>How much does it cost?</h3><p>Nothing. The kit and this guide are free. You only need the AI you already use.</p></div>
-    <div class="card"><h3>Does it work on any computer?</h3><p>It works anywhere Claude Code runs: Windows, Mac, and Linux. AI checks this during its review.</p></div>
+    <div class="card"><h3>Does it work on any computer?</h3><p>It works wherever Claude Code runs: Windows, Mac, and Linux. The AI checks this when it reviews your project.</p></div>
   </div>
-  <p class="fonte" style="margin-top:22px">What does AI do in your work today that <strong>you couldn’t undo</strong> if it went wrong? Free at inema.club, right on the web.</p>
+  <p class="fonte" style="margin-top:22px">And you: what does AI do in your work today that <strong>you couldn’t undo</strong> if it went wrong? Free at inema.club, right here online.</p>
 </div></section>
 </main>
 
 <footer>
   <div class="wrap">
     <div class="pill">Claude Code</div><div class="pill">bash</div><div class="pill">Python 3</div><div class="pill">MIT</div>
-    <p style="margin-top:18px">No-Damage AI · free at inema.club, right on the web ·
+    <p style="margin-top:18px">No-Damage AI · free at inema.club, available online ·
       <a href="https://github.com/inematds/ia-sem-estrago">inematds/ia-sem-estrago</a> ·
       <a href="https://inema.club">INEMA.CLUB</a></p>
   </div>

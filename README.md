@@ -4,7 +4,7 @@
 
 [![IA sem estrago](guia/assets/banner.jpg)](https://inematds.github.io/ia-sem-estrago/guia/)
 
-**A IA trabalha sozinha e não estraga o que não tem volta.** Você pede a tarefa e vai fazer outra coisa. Quando volta, ela está feita e testada. Nenhuma pasta foi apagada, nenhuma senha foi lida, e o Claude não disse "pronto" antes da hora.
+**A IA trabalha sozinha e não estraga o que não tem volta.** Baseado na documentação oficial do Claude Code e nas recomendações dos engenheiros da Anthropic. Você pede a tarefa e vai fazer outra coisa. Quando volta, ela está feita e testada. Nenhuma pasta foi apagada, nenhuma senha foi lida, e o Claude não disse "pronto" antes da hora.
 
 ## 📖 Guia
 
@@ -19,7 +19,16 @@ O kit põe duas proteções no Claude Code:
 
 Com as duas, você pode desligar o "permitir" e sair de perto. Tudo o que tem volta segue sozinho, no modo automático do Claude Code.
 
-**De onde vem:** de uma palestra do time do Claude Code, na Anthropic, que trabalha assim. Eles passaram de 2.500 para mais de 30.000 mudanças de código por dia. No estudo mostrado na palestra, quem aprovava comando por comando pegou só 14% dos comandos perigosos; o modo automático barrou 89%.
+## Baseado na Anthropic
+
+Nada aqui é invenção nossa. O kit junta, pronto para usar, o que a Anthropic (a empresa que faz o Claude) publica e recomenda:
+
+- **Os engenheiros do Claude Code:** na palestra "Rethinking Claude Code Best Practices", Lydia Hallie, do time do Claude Code, mostra como eles trabalham: param de vigiar, travam o que não tem volta e cobram o "pronto" com teste. Assim passaram de 2.500 para mais de 30.000 mudanças de código por dia. [Assistir](https://www.youtube.com/watch?v=vlfCjWuv4es)
+- **O cansaço de aprovar:** quem aprova tudo à mão acaba aceitando 93% dos pedidos; o registro interno da Anthropic tem casos reais de IA apagando ramos do git, enviando uma chave de acesso para fora e mexendo no banco de produção. [Artigo: How we built Claude Code auto mode](https://www.anthropic.com/research/claude-code-auto-mode)
+- **A caixa fechada (sandbox):** reduziu os pedidos de permissão em 84%, com mais segurança. [Artigo: Making Claude Code safer with sandboxing](https://www.anthropic.com/research/claude-code-sandboxing)
+- **Cada peça na documentação oficial:** a trava = [Permissões](https://code.claude.com/docs/en/permissions); a caixa fechada = [Sandbox](https://code.claude.com/docs/en/sandboxing); o teste antes do "pronto" = [Hooks](https://code.claude.com/docs/en/hooks); o jeito de pedir = [Boas práticas](https://code.claude.com/docs/en/best-practices). Conferido em 17/11/2026.
+
+Os 14% (pessoas que aprovam um por um) e 89% (modo automático) foram mostrados na palestra; os 93% e 84% estão nos artigos oficiais.
 
 ## Como começar (sem ser técnico)
 

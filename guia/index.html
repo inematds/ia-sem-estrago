@@ -163,6 +163,7 @@
     <a class="sec" href="#dia">No seu dia</a>
     <a class="sec" href="#como">Como funciona</a>
     <a class="sec" href="#comecar">Como começar</a>
+    <a class="sec" href="#base">Base Anthropic</a>
     <a class="sec" href="#prova">A prova</a>
     <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
     <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
@@ -174,7 +175,7 @@
   <div class="glow"></div>
   <div class="wrap">
     <div>
-      <span class="chip">Kit grátis para quem usa o Claude Code</span>
+      <span class="chip">Baseado na documentação e nos engenheiros da Anthropic · kit grátis</span>
       <h1>A IA trabalha sozinha e <span class="amb">não estraga o que não tem volta</span></h1>
       <p class="lead">Você pede a tarefa e vai fazer outra coisa. Quando volta, ela está feita e testada. Nenhuma pasta foi apagada, nenhuma senha foi lida, e o Claude não disse "pronto" antes da hora.</p>
       <div class="cta">
@@ -189,7 +190,7 @@
 <main>
 <section id="resumo" class="resumo"><div class="wrap">
   <span class="chip">Em uma frase</span>
-  <p><strong>O kit põe duas proteções no Claude Code:</strong> uma <strong>trava</strong> que barra o que não tem volta (apagar pasta, ler senha, forçar envio no git), em qualquer modo, e um <strong>teste</strong> que não deixa o Claude parar enquanto a tarefa não passar. Com isso você pode desligar o "permitir" e sair de perto.</p>
+  <p><strong>O kit põe duas proteções no Claude Code:</strong> uma <strong>trava</strong> que barra o que não tem volta (apagar pasta, ler senha, forçar envio no git), em qualquer modo, e um <strong>teste</strong> que não deixa o Claude parar enquanto a tarefa não passar. Com isso você pode desligar o "permitir" e sair de perto. Nada aqui é invenção nossa: cada peça segue a <strong>documentação oficial do Claude Code</strong> e o que os <strong>engenheiros da Anthropic</strong>, a empresa que faz o Claude, publicaram e recomendam (<a href="#base">veja as fontes</a>).</p>
   <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="assets/banner-grade.jpg" alt="IA sem estrago: o problema de vigiar a IA, o que muda no seu dia, a trava do que não tem volta, o teste antes do pronto, peça para a IA analisar, grátis no inema.club" loading="lazy" style="width:100%;display:block"></figure>
 </div></section>
 
@@ -208,11 +209,24 @@
   <div class="grid g3" style="margin-top:16px">
     <div class="card"><h3>👤 Para quem</h3><p>Quem usa o Claude Code no dia a dia, com código ou com texto. Para instalar, você precisa do Claude Code e do Python 3.</p></div>
     <div class="card"><h3>🧪 Testado de verdade</h3><p>Escondemos um erro no código e pedimos ao Claude só "diga pronto". O teste barrou, ele achou o erro, consertou e só então parou (<a href="#prova">veja a prova</a>).</p></div>
-    <div class="card"><h3>🎁 Grátis</h3><p>O kit no GitHub, este guia em português, inglês e espanhol, e a origem: uma palestra do time do Claude Code, na Anthropic, que trabalha assim (<a href="#fonte">fonte</a>).</p></div>
+    <div class="card"><h3>🎁 Grátis</h3><p>O kit no GitHub, este guia em português, inglês e espanhol, e tudo baseado no que a Anthropic publica e recomenda (<a href="#base">fontes</a>).</p></div>
   </div>
 </div></section>
 
 <!-- VIDEO: entra o explicavideo do projeto quando publicado -->
+
+<section id="base"><div class="wrap">
+  <span class="chip">De onde vem</span>
+  <h2>Não é invenção nossa: é o que <span class="amb">a Anthropic recomenda</span></h2>
+  <p class="sub">A Anthropic é a empresa que faz o Claude. O kit junta, num lugar só e pronto para usar, o que os engenheiros dela publicaram e o que a documentação oficial do Claude Code ensina.</p>
+  <div class="grid g3">
+    <div class="card"><h3>🎤 Os engenheiros do Claude Code</h3><p>Numa palestra, Lydia Hallie, do time que faz o Claude Code, mostrou como eles mesmos trabalham: param de vigiar, travam o que não tem volta e cobram o "pronto" com teste. Assim passaram de <strong>2.500 para mais de 30.000</strong> mudanças de código por dia.</p><p><a href="https://www.youtube.com/watch?v=vlfCjWuv4es" target="_blank" rel="noopener">Assistir à palestra</a></p></div>
+    <div class="card"><h3>📊 O que a Anthropic publicou</h3><p>Quem aprova tudo à mão acaba aceitando <strong>93%</strong> dos pedidos: o cansaço de aprovar faz a pessoa parar de ler. E o registro interno deles tem casos reais de IA apagando ramos do projeto, enviando uma chave de acesso para fora e mexendo no banco de dados de produção.</p><p><a href="https://www.anthropic.com/research/claude-code-auto-mode" target="_blank" rel="noopener">Artigo: como construímos o modo automático</a></p></div>
+    <div class="card"><h3>📦 A caixa fechada</h3><p>A Anthropic também mostrou que, com a "caixa fechada" do Claude Code (o sandbox), os pedidos de permissão caíram <strong>84%</strong>, com mais segurança. O kit já deixa essa caixa ligada.</p><p><a href="https://www.anthropic.com/research/claude-code-sandboxing" target="_blank" rel="noopener">Artigo: Claude Code mais seguro com sandbox</a></p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>📚 Cada peça do kit, na documentação oficial</h3><p><strong>A trava</strong> usa as regras de bloqueio do Claude Code (<a href="https://code.claude.com/docs/en/permissions" target="_blank" rel="noopener">Permissões</a>). <strong>A caixa fechada</strong> é o sandbox (<a href="https://code.claude.com/docs/en/sandboxing" target="_blank" rel="noopener">Sandbox</a>). <strong>O teste antes do "pronto"</strong> é um gancho que roda quando a IA tenta encerrar (<a href="https://code.claude.com/docs/en/hooks" target="_blank" rel="noopener">Hooks</a>). E o jeito de pedir segue as <a href="https://code.claude.com/docs/en/best-practices" target="_blank" rel="noopener">boas práticas do Claude Code</a>. Tudo conferido em 17/11/2026.</p></div>
+  <p class="fonte">Os números 14% e 89% da palestra (pessoas que aprovam um por um x modo automático) foram mostrados por ela e não estão publicados na página da Anthropic; os 93% e 84% acima estão nos artigos oficiais.</p>
+</div></section>
 
 <section id="dia"><div class="wrap">
   <span class="chip">No seu dia a dia</span>
@@ -280,18 +294,6 @@ Não mude nada ainda. Mostre o plano e espere eu dizer sim.</pre>
     <blockquote>"O teste falhava porque a soma subtraía em vez de somar. Troquei e rodei a checagem de novo: o teste passa."</blockquote>
     <p class="rod">Resposta final do Claude, no Claude Code pela assinatura, em 17/11/2026. Registro completo: <a href="https://github.com/inematds/ia-sem-estrago/blob/main/exemplo/PROVA.md" target="_blank" rel="noopener">PROVA.md</a>.</p>
   </div>
-</div></section>
-
-<section id="fonte"><div class="wrap">
-  <span class="chip">De onde vem</span>
-  <h2>O time que faz o Claude Code <span class="amb">já trabalha assim</span></h2>
-  <p class="sub">A ideia vem de uma palestra de Lydia Hallie, do time do Claude Code, na Anthropic. Eles pararam de vigiar a IA, travaram o que não tem volta e passaram a cobrar o "pronto" com teste.</p>
-  <div class="stats">
-    <div class="stat"><b>2.500 → 30.000+</b><span>mudanças de código por dia no time do Claude Code, de maio a setembro (slide da palestra).</span></div>
-    <div class="stat"><b>14%</b><span>dos comandos perigosos foram pegos por quem aprovava um por um. Clicar em "permitir" o tempo todo não protege.</span></div>
-    <div class="stat"><b>89%</b><span>foram barrados pelo modo automático. Os que sobram são o motivo da trava: o que não tem volta não pode depender de sorte.</span></div>
-  </div>
-  <p class="fonte">Fonte: <a href="https://www.youtube.com/watch?v=vlfCjWuv4es" target="_blank" rel="noopener">palestra no YouTube</a>. O estudo dos 14% e 89% foi mostrado na palestra e não está publicado na página oficial da Anthropic.</p>
 </div></section>
 
 <section id="faq"><div class="wrap">
