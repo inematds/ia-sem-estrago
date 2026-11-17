@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# pronto.sh — hook de Stop/TaskCompleted do kit "fora do volante".
+# pronto.sh — hook de Stop/TaskCompleted do kit "IA sem estrago".
 # Roda a checagem de "pronto" do projeto. Falhou → sai com 2 (o Claude volta e conserta).
 # Saída 1 NÃO serve: o Claude Code trata como erro que não bloqueia e segue como se estivesse feito.
 #

@@ -1,86 +1,108 @@
-# 🛞 Hands off the wheel
+# 🛡️ No-Damage AI
 
 **🇧🇷 [Português](README.md) · 🇺🇸 [English](README.en.md) · 🇪🇸 [Español](README.es.md)**
 
-[![Hands off the wheel](guia/assets/banner-en.jpg)](https://inematds.github.io/fora-do-volante/guia/en/)
+[![No-Damage AI](guia/assets/banner-en.jpg)](https://inematds.github.io/ia-sem-estrago/guia/en/)
 
-You can stop watching Claude, clicking allow, and finding out only at the end that something went wrong: the Claude Code team already has. In May, they were making 2,500 code changes a day; by September, more than 30,000. The method is to take your hands off the wheel in three changes.
+**AI works on its own without damaging anything you can’t undo.** You assign a task and go do something else. When you come back, it’s done and tested. No folders have been deleted, no passwords have been read, and Claude hasn’t said “done” before it really was.
 
-## In 1 minute
+## 📖 Guide
 
-**The problem:** people who use Claude Code become babysitters. They watch every step, click “allow” all the time, and only find out at the end that the task wasn’t completed.
-
-**Where it came from:** a talk by the Claude Code team at Anthropic. They stopped working that way and went from 2,500 to more than 30,000 code changes per day. The secret was to take three tasks off people’s hands and let the machine do them.
-
-**The “hands off the wheel” method means three changes:**
-1. **Stop watching:** use short instructions, without uppercase “IMPORTANT,” which gets in the way of today’s models.
-2. **Stop approving everything:** let automatic mode approve. Anything irreversible (deleting, reading passwords, sending email) becomes a lock in a file that Claude can’t get past.
-3. **Check along the way:** say what “done” looks like, and an automatic test tells Claude to go back and fix things until it’s truly done.
-
-**The kit (this repository) is the method already put together, ready to copy into your project:**
-- the lock file, ready to use;
-- the script that checks for “done”;
-- a checker that tells you whether your project follows the three changes;
-- an example and real proof: we asked Claude only to “say done,” with a hidden error; the lock stopped it; Claude found the error, fixed it, and only then stopped.
-
-**All free:** the kit, the guide in Portuguese, English, and Spanish, and explanatory videos—one for people who already use Claude Code and another for those just getting started.
-
-## 📖 Usage guide
-
-Complete guide (landing page + step-by-step): **https://inematds.github.io/fora-do-volante/guia/en/**
+To understand what the kit does and how it can change your day, without the technical details: **https://inematds.github.io/ia-sem-estrago/guia/en/**
 
 ## What it is
 
-People who use Claude Code often watch every step, click “allow” all the time, and only find out at the end that the task wasn’t done. **Hands off the wheel** is a method in three changes, drawn from a talk by the Claude Code team at Anthropic, and a free kit to copy into your project. It’s for people who use Claude Code every day, with code or text. To understand it, just read the guide; to use the kit, you need Claude Code and Python 3.
+The kit adds two protections to Claude Code:
 
-## The method
+- **The block:** stops actions you can’t undo, such as deleting an entire folder, reading passwords, or deleting the project history. It works in any mode, even if the AI tries. It uses one question to decide: *“If the AI gets this wrong once, can I undo it?”*
+- **The check before “done”:** you define what “done” means once, and a test checks it every time the AI tries to finish. If the check fails, it goes back and fixes the problem.
 
-Three changes, all using the same example (switching the login to a new API):
+With both protections in place, you can turn off “allow” and walk away. Anything you can undo continues on its own in Claude Code’s auto mode.
 
-1. **Stop watching** — CLAUDE.md with only what Claude can’t discover by reading the code, without IMPORTANT in uppercase (`kit/CLAUDE.md.exemplo` (in Portuguese), `/doctor prompt-audit`).
-2. **Stop approving everything** — auto mode for day-to-day work and, for anything irreversible, the **undo test**: it becomes a blocking rule in the configuration, which applies before auto mode and in every mode. The sandbox handles the rest (`kit/teste-do-desfazer.md` (in Portuguese)).
-3. **Check along the way** — say what done looks like, one test per task, and a hook that **exits with 2** when the check fails (with 1, Claude carries on as if the task were done) (`kit/como-e-pronto.md` (in Portuguese)).
+**Where the idea comes from:** a talk by the Claude Code team at Anthropic, who work this way. They went from 2,500 to more than 30,000 code changes a day. In the study shown in the talk, people who approved commands one by one caught only 14% of dangerous commands; auto mode blocked 89%.
 
-In the study shown in the talk, people who approved commands one by one caught 14% of dangerous commands; auto mode blocked 89%. That study was only shown in the talk; it isn’t on Anthropic’s official website.
+## How to get started (no technical skills needed)
 
-**The proof:** the kit ran for real in Claude Code 2.1.326. Claude said “done,” the hook ran the test, found the failure, and exited with 2; Claude came back, found the error, fixed it, and only then stopped (`exemplo/PROVA.md` (in Portuguese)).
+Open Claude Code or Codex in your project folder and paste this:
 
-## The kit
+```text
+Read the “No-Damage AI” kit at https://github.com/inematds/ia-sem-estrago (the README explains everything, including installation).
+Then look at this project and answer in simple English:
+1. What could not be undone if you made a mistake here (deleting something, passwords, sending something outside)?
+2. What test or check proves that a task is complete in this project?
+3. Which parts of the kit are useful for me, and which are not?
+Don’t change anything yet. Show me the plan and wait for me to say yes.
+```
 
-| File | What it’s for |
+The AI shows you the plan. You approve what you want, and it installs only those parts. The kit is designed for Claude Code; Codex can also read it and tell you whether it suits your project.
+
+---
+
+## Technical installation
+
+For those who prefer to install it manually. Everything is plain text to copy; nothing installs itself.
+
+### Prerequisites
+
+- **Claude Code** with your project open (`claude --version`). Tested with version 2.1.326; `/auto-mode-setup`, `/sandbox`, and `/doctor prompt-audit` were used in that version.
+- **Python 3 and git**, for the checker, tests, and downloading the kit.
+- **Sandbox on Linux/WSL2:** requires `bubblewrap` and `socat` (`sudo apt install bubblewrap socat`). Nothing needs to be installed on macOS.
+
+### Files
+
+| File | Purpose |
 |---|---|
-| `kit/.claude/settings.json` | blocking rules (.env, ~/.ssh, forced push, `rm -rf`, `reset --hard`), sandbox enabled, `Stop` and `TaskCompleted` hooks |
-| `kit/.claude/hooks/pronto.sh` | runs the check; on failure → exit code 2 with the reason; at most 3 consecutive rounds |
-| `kit/teste-do-desfazer.md` | the question that decides what goes on the blocklist |
-| `kit/como-e-pronto.md` | request template with “done means…” and a check for each task |
-| `kit/CLAUDE.md.exemplo` | lean CLAUDE.md |
-| `ferramentas/conferir_volante.py` | checks a project against the three changes (read-only) |
-| `exemplo/` | the login in three versions (forgot the old API, logged everyone out, correct) + `PROVA.md` with the hook running for real in Claude Code |
+| `kit/.claude/settings.json` | blocking rules (`.env`, `~/.ssh`, forced push, `rm -rf`, `reset --hard`), sandbox enabled, `Stop` and `TaskCompleted` hooks |
+| `kit/.claude/hooks/pronto.sh` | runs the check; on failure, exits with code 2 and the reason; at most 3 consecutive retries |
+| `kit/teste-do-desfazer.md` | the question that determines what goes on the block list |
+| `kit/como-e-pronto.md` | request template with “done means…” and a task check |
+| `kit/CLAUDE.md.exemplo` | concise CLAUDE.md, without uppercase IMPORTANT warnings |
+| `ferramentas/conferir.py` | checks a project (CLAUDE.md, blocking rules + sandbox, done hook); read-only |
+| `exemplo/` | one login in three versions (forgot the old API, logged everyone out, correct) + `PROVA.md` with the hook running for real |
 | `guia/` | the guide page in PT, EN, and ES (GitHub Pages) |
+
+### How it works
+
+`Request with “done means…”` → `Claude works in auto mode` → `block + sandbox stop anything that can’t be undone` → `Claude tries to stop` → `hook runs the check` → `failed: exits with 2 and tries again · passed: done`
+
+- **Permission order:** `deny` (blocks), `ask` (asks), `allow` (allows). Claude Code checks `deny` first, before the auto mode checker, in every mode, including `bypassPermissions`.
+- **The rule checks the command text**, not its effects. That’s why the kit also enables the **sandbox**, where commands can only read folders and connect to approved sites (`github.com`, `pypi.org`, `files.pythonhosted.org`, `registry.npmjs.org`). If your project connects to another site, add its domain to `sandbox.network.allowedDomains`.
+- **Why `Stop` and `TaskCompleted`:** these are the points when Claude tries to stop or close a task. `PostToolUse` cannot block a command, even with exit code 2, because the tool has already run.
+- **Exit code 2, not 1:** with 2, Claude Code returns the error to Claude, which goes back and fixes it. With 1, it only shows the error, and Claude continues as if the task were done.
+- **Loop protection:** `pronto.sh` blocks at most 3 consecutive times (`PRONTO_MAX`), then lets Claude stop so you can take a look.
+- **Where the check comes from**, in this order: the `PRONTO_CMD` variable, the `.claude/pronto.cmd` file (one line), or automatic detection of `npm test` / `python3 -m unittest`. If there is nothing to check, it does not block. If you combine it with a `grep`, check that the folder exists: `! grep -rn "x" src/` always passes when there is no `src/` folder.
 
 ## The process, from start to finish
 
+Replace `~/meu-projeto` with your project folder. ⚙️ = script · 🧠 = you (sometimes with Claude).
+
 | # | Step | Command | Who |
 |---|---|---|---|
-| 0 | Download the kit | `git clone https://github.com/inematds/fora-do-volante.git && cd fora-do-volante` | 🧠 you |
-| 1 | Check your project | `python3 ferramentas/conferir_volante.py ~/my-project` | ⚙️ script |
-| 2 | Copy the configuration and hook | `cp -rn kit/.claude ~/my-project/` (does not overwrite; if you already have `settings.json`, merge the keys by hand; add `.claude/.pronto-bloqueios` to `.gitignore`) | 🧠 you |
-| 3 | Specify the “done” check | `echo "python3 -m unittest discover -s tests -q" > ~/my-project/.claude/pronto.cmd` (replace with your project’s test command) | 🧠 you |
-| 4 | Turn on auto mode and adapt it to your setup | `claude --permission-mode auto` (or press Shift+Tab until “⏵⏵ auto mode on”; default since 2.1.283), then `/auto-mode-setup` (drafts `autoMode.environment`) | 🧠 you + Claude |
-| 5 | Turn on and test the sandbox | `/sandbox` (Linux/WSL2: `bubblewrap` and `socat`) | 🧠 you |
-| 6 | Trim CLAUDE.md | `/doctor prompt-audit` and the test “could it discover this by reading the code?” | 🧠 you + Claude |
-| 7 | See the hook enforce the check | `bash exemplo/rodar.sh` | ⚙️ script |
-| 8 | Check again | step 1 → `fora do volante: ok` | ⚙️ script |
+| 0 | Download the kit | `git clone https://github.com/inematds/ia-sem-estrago.git && cd ia-sem-estrago` | 🧠 you |
+| 1 | Check your project (failures the first time are normal) | `python3 ferramentas/conferir.py ~/meu-projeto` | ⚙️ script |
+| 2 | Copy the configuration and hook | `cp -rn kit/.claude ~/meu-projeto/` and `echo ".claude/.pronto-bloqueios" >> ~/meu-projeto/.gitignore` (`-n` does not overwrite; if `settings.json` already exists, merge the keys manually) | 🧠 you |
+| 3 | Set the “done” check | `echo "python3 -m unittest discover -s tests -q" > ~/meu-projeto/.claude/pronto.cmd` (replace it with your project’s test) | 🧠 you |
+| 4 | Turn on auto mode and describe your environment | `claude --permission-mode auto` (or press Shift+Tab until “⏵⏵ auto mode on”; the default since 2.1.283), then `/auto-mode-setup` | 🧠 you + Claude |
+| 5 | Turn on and test the sandbox | `/sandbox` | 🧠 you |
+| 6 | Trim down CLAUDE.md | `/doctor prompt-audit` and, for each line, ask “Could it figure this out by reading the code?” | 🧠 you + Claude |
+| 7 | Check that the hook catches the problem | `bash exemplo/rodar.sh` (forgot: 2 · logged out: 2 · correct: 0) | ⚙️ script |
+| 8 | Check again | step 1 → `ia sem estrago: ok` | ⚙️ script |
+
+The checker reads the files; it cannot tell whether you ran steps 4 and 5 inside Claude Code.
 
 ## Tests
 
 ```bash
 python3 -m unittest discover -s tests -v   # 11 tests, Python 3 only
-bash exemplo/rodar.sh                       # esqueceu: 2 · deslogou: 2 · certo: 0
+bash exemplo/rodar.sh                       # forgot: 2 · logged out: 2 · correct: 0
 ```
 
-## Where it comes from
+## The proof
 
-From the talk “Rethinking Claude Code Best Practices” by Lydia Hallie (Claude Code team, Anthropic, AI Engineer): https://www.youtube.com/watch?v=vlfCjWuv4es — syntax checked against the official Claude Code documentation (permissions, sandboxing, hooks, auto mode), Nov 17, 2026.
+The hook ran for real in Claude Code 2.1.326, using the subscription, on 17/11/2026. With a hidden error (the sum was subtracting), Claude said “done”; the hook ran the test, found the failure, and exited with code 2. Claude went back, found the error, fixed it, and only then stopped. Record: `exemplo/PROVA.md`.
 
-Free at [inema.club](https://inema.club), online. MIT License.
+## Where the idea comes from
+
+Talk: “Rethinking Claude Code Best Practices” by Lydia Hallie (Claude Code team, Anthropic, AI Engineer): https://www.youtube.com/watch?v=vlfCjWuv4es. Syntax checked against the official Claude Code documentation (permissions, sandboxing, hooks, auto mode) on 17/11/2026. The 14% and 89% study was only shown in the talk.
+
+Free at [inema.club](https://inema.club), right on the internet. MIT License.

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""conferir_volante.py — confere se um projeto do Claude Code está "fora do volante".
+"""conferir.py — confere se um projeto do Claude Code está "IA sem estrago".
 
-Uso: python3 ferramentas/conferir_volante.py <pasta-do-projeto> [--json]
+Uso: python3 ferramentas/conferir.py <pasta-do-projeto> [--json]
 
 Lê <pasta>/.claude/settings.json (e settings.local.json, se houver) e <pasta>/CLAUDE.md e confere:
   troca 1 — CLAUDE.md sem gritos (IMPORTANTE/NUNCA/NEVER/ALWAYS em maiúscula) e enxuto
@@ -114,7 +114,7 @@ def main(argv):
         for n, t, x in achados:
             print(f"[{n}] troca {t} de 3: {x}")
         falhas = sum(1 for n, *_ in achados if n == "falha")
-        print("fora do volante: ok" if not falhas else f"fora do volante: {falhas} falha(s)")
+        print("ia sem estrago: ok" if not falhas else f"ia sem estrago: {falhas} falha(s)")
     return 1 if any(n == "falha" for n, *_ in achados) else 0
 
 

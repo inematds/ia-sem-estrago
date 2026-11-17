@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hands off the wheel — stop watching Claude in three changes</title>
-<meta name="description" content="You can stop watching Claude, clicking Allow, and discovering errors only at the end: the Claude Code team already has. The method is to take your hands off the wheel in three changes, with a free kit.">
-<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/fora-do-volante/guia/">
-<link rel="alternate" hreflang="en" href="https://inematds.github.io/fora-do-volante/guia/en/">
-<link rel="alternate" hreflang="es" href="https://inematds.github.io/fora-do-volante/guia/es/">
-<meta property="og:title" content="Hands off the wheel — stop watching Claude in three changes">
-<meta property="og:description" content="The Claude Code team has stopped watching, approving everything, and discovering errors at the end. The method and free kit.">
-<meta property="og:image" content="https://inematds.github.io/fora-do-volante/guia/assets/banner-en.jpg">
+<title>AI works on its own without causing damage you can’t undo — free kit for Claude Code</title>
+<meta name="description" content="A free kit for Claude Code: one guard blocks actions you can’t undo (like deleting a folder or reading a password), and a test keeps AI from saying it’s done too soon. You can step away.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/ia-sem-estrago/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/ia-sem-estrago/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/ia-sem-estrago/guia/es/">
+<meta property="og:title" content="No-Damage AI — AI works on its own without causing damage you can’t undo">
+<meta property="og:description" content="AI works on its own without causing damage you can’t undo. Free kit for Claude Code.">
+<meta property="og:image" content="https://inematds.github.io/ia-sem-estrago/guia/assets/banner-en.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -99,7 +99,7 @@
   .quem{display:inline-block;font-family:Sora;font-size:.75rem;letter-spacing:.06em;color:var(--txt);background:var(--tint);border:1px solid var(--line);border-radius:999px;padding:.1em .7em;margin-left:.5em;vertical-align:middle;font-weight:600}
   footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
   .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:4px}
-  /* numbers */
+  /* números */
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
   @media(max-width:720px){.stats{grid-template-columns:1fr}}
   .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
@@ -107,7 +107,7 @@
   body.light .stat b{color:var(--txt)}
   .stat span{display:block;color:var(--mut);font-size:.93rem;margin-top:.5em}
   .fonte{font-size:.86rem;color:var(--mut);margin-top:14px;max-width:80ch}
-  /* changes */
+  /* trocas */
   .troca{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;padding:26px 0;border-top:1px solid var(--line)}
   .troca:first-of-type{border-top:none}
   .troca .n{width:64px;height:64px;border-radius:14px;border:1px solid var(--line);background:var(--card);display:flex;align-items:center;justify-content:center;font:800 1.6rem Sora,sans-serif;color:var(--amb)}
@@ -117,14 +117,14 @@
   .troca .ex{margin-top:.8em;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--fill);border-radius:10px;padding:12px 16px;font-size:.95rem;color:var(--mut);max-width:76ch}
   .troca .ex b{color:var(--txt)}
   @media(max-width:540px){.troca{grid-template-columns:1fr}}
-  /* three endings */
+  /* três finais */
   .vs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px;max-width:900px}
   @media(max-width:720px){.vs{grid-template-columns:1fr}}
   .vs div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:.93rem}
   .vs strong{display:block;font-family:Sora;margin-bottom:.25em}
   .vs .r{display:block;margin-top:.5em;font-weight:600}
   .vs .r.bad{color:var(--bad)} .vs .r.ok{color:var(--ok)}
-  /* proof */
+  /* prova */
   .prova{background:var(--card);border:1px solid var(--amb);border-radius:16px;padding:26px 26px 22px;margin-top:6px}
   body.light .prova{border-color:#EAB308}
   .tl{list-style:none;margin:0;padding:0;counter-reset:t}
@@ -135,7 +135,7 @@
   .tl b{font-family:Sora}
   blockquote{margin:6px 0 0;padding:14px 18px;border-left:3px solid var(--fill);background:var(--bg2);border-radius:0 10px 10px 0;font-size:1.02rem}
   .prova .rod{font-size:.86rem;color:var(--mut);margin-top:14px}
-  /* technical section */
+  /* parte técnica */
   .techhead{background:var(--bg2);border-top:3px solid var(--fill);padding:58px 0 8px}
   .techhead h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin:.3em 0 0}
   .techhead .sub{color:var(--mut);margin:.6em 0 1.2em;max-width:66ch}
@@ -151,7 +151,7 @@
 <body>
 
 <nav><div class="wrap">
-  <a class="brand" href="#top"><span class="emoji">🛞</span> Hands off the wheel</a>
+  <a class="brand" href="#top"><span class="emoji">🛡️</span> No-Damage AI</a>
   <span class="sep">|</span>
   <span class="clubpro">
     <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
@@ -159,14 +159,14 @@
     <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
   </span>
   <div class="links">
-    <a class="sec" href="#problema">The problem</a>
-    <a class="sec" href="#trocas">The three changes</a>
+    <a class="sec" href="#explicado">What you gain</a>
+    <a class="sec" href="#dia">Your day</a>
+    <a class="sec" href="#como">How it works</a>
+    <a class="sec" href="#comecar">How to start</a>
     <a class="sec" href="#prova">The proof</a>
-    <a class="sec" href="#fonte">Where it comes from</a>
-    <a class="sec" href="#tecnico">Kit (technical)</a>
     <span class="lang"><a href="../">PT</a><a class="on" href="./">EN</a><a href="../es/">ES</a></span>
-    <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
-    <a class="btn" href="https://github.com/inematds/fora-do-volante" target="_blank" rel="noopener">GitHub</a>
+    <button class="tgl" id="themeToggle" aria-label="Switch theme" title="Switch theme">🌙</button>
+    <a class="btn" href="https://github.com/inematds/ia-sem-estrago" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
 
@@ -174,274 +174,166 @@
   <div class="glow"></div>
   <div class="wrap">
     <div>
-      <span class="chip">A method for Claude Code · free kit</span>
-      <h1><span class="amb">Hands off the wheel</span>: Claude finishes the task without you watching</h1>
-      <p class="lead">You can stop watching Claude, clicking Allow, and discovering errors only at the end: the Claude Code team already has. The method is to take your hands off the wheel in three changes.</p>
+      <span class="chip">Free kit for Claude Code users</span>
+      <h1>AI works on its own and <span class="amb">doesn’t cause damage you can’t undo</span></h1>
+      <p class="lead">Give it a task and go do something else. When you come back, the work is done and tested. No folders were deleted, no passwords were read, and Claude didn’t say “done” too soon.</p>
       <div class="cta">
-        <a class="btn" href="#problema">Understand it in 3 minutes</a>
-        <a class="btn ghost" href="https://github.com/inematds/fora-do-volante" target="_blank" rel="noopener">View on GitHub</a>
+        <a class="btn" href="#explicado">What you get</a>
+        <a class="btn ghost" href="#comecar">How to start</a>
       </div>
     </div>
-    <figure><img src="../assets/banner-en.jpg" alt="Hands off the wheel: stop watching Claude. A loose steering wheel, with no hands, on a desk, with a code terminal in the background"></figure>
+    <figure><img src="../assets/banner-en.jpg" alt="No-Damage AI: AI works on its own without causing damage you can’t undo"></figure>
   </div>
 </header>
 
 <main>
 <section id="resumo" class="resumo"><div class="wrap">
-  <span class="chip">In brief</span>
-  <p>People who use Claude Code often watch every step, click “allow” all the time, and only discover at the end that the task wasn’t done. <strong>Hands off the wheel</strong> is a method in three changes, taken from a talk by the Claude Code team at Anthropic, plus a free kit you can copy into your project. It’s for people who use Claude Code day to day, with code or text. Reading this page is enough to understand it; to use the kit, you need Claude Code and Python 3.</p>
-  <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="Hands off the wheel: stop watching, stop approving everything, check along the way, the real proof, the process from beginning to end, and the free kit" loading="lazy" style="width:100%;display:block"></figure>
+  <span class="chip">In one sentence</span>
+  <p><strong>The kit adds two safeguards to Claude Code:</strong> a <strong>guard</strong> that blocks actions you can’t undo (like deleting a folder, reading a password, or forcing a Git push) in every mode, and a <strong>test</strong> that keeps Claude working until the task passes. Then you can turn off “allow” and step away.</p>
+  <figure style="margin:22px 0 0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="No-Damage AI: the problem with watching AI, what changes in your day, the guard against actions you can’t undo, the test before done, ask AI to analyze, free at inema.club" loading="lazy" style="width:100%;display:block"></figure>
 </div></section>
 
 <section id="explicado"><div class="wrap">
-  <span class="chip">Explained in 1 minute</span>
-  <h2>What is <span class="amb">hands off the wheel</span> for?</h2>
-  <div class="grid g3">
-    <div class="card"><h3>😩 The problem</h3><p>People who use Claude Code become babysitters: they watch every step, click "allow" all the time, and only discover at the end that the task wasn’t completed.</p></div>
-    <div class="card"><h3>🏢 Where it came from</h3><p>From a talk by the Claude Code team at Anthropic. They stopped working this way and went from 2,500 to more than 30,000 code changes per day. The secret was to take three tasks away from humans and let the machine handle them.</p></div>
-    <div class="card"><h3>🛞 The method: three changes</h3><p><strong>1. Stop watching:</strong> a short instruction, without uppercase "IMPORTANT," which gets in the way of today’s models.<br><strong>2. Stop approving everything:</strong> let automatic mode approve; irreversible actions (deleting, reading passwords, sending email) become a block in a file that Claude cannot bypass.<br><strong>3. Check along the way:</strong> say what "done" looks like, and an automatic test tells Claude to come back and fix things until it’s truly done.</p></div>
+  <span class="chip">What you gain</span>
+  <h2>Before and after the <span class="amb">kit</span></h2>
+  <div class="grid g2">
+    <div class="card"><h3>😩 Without the kit</h3><p>You sit in front of the screen and click “allow” for every command. After so many clicks, you stop reading. In a study shared by the Claude Code team, people who approved commands one by one caught only <strong>14%</strong> of dangerous commands.</p><p>Claude says “done,” and the mistake only shows up later, when you test it or a client complains.</p></div>
+    <div class="card"><h3>😌 With the kit</h3><p>You don’t click anything. You go do something else. Actions you can’t undo are <strong>always</strong> blocked, in every mode, even if the AI tries.</p><p>Claude only stops when the test passes. If it fails, Claude goes back and fixes the problem.</p></div>
   </div>
   <div class="grid g3" style="margin-top:16px">
-    <div class="card"><h3>🧰 The kit</h3><p>The method already assembled, ready to copy into your project: the completed block file, the script that checks for "done," a checker that tells you whether your project follows the three changes, and an example with real proof.</p></div>
-    <div class="card"><h3>🧪 The proof</h3><p>We asked Claude only to "say done," with a hidden bug in the code. The block stopped it; Claude found the bug, fixed it, and only then stopped.</p></div>
-    <div class="card"><h3>🎁 All free</h3><p>The kit on GitHub, this guide in Portuguese, English, and Spanish, and videos explaining it: one for people who already use Claude Code and another for beginners.</p></div>
+    <div class="card"><h3>⏱️ Your time back</h3><p>You don’t have to babysit AI. The task moves forward while you do something else.</p></div>
+    <div class="card"><h3>🔒 No damage you can’t undo</h3><p>Git can undo code mistakes. A deleted folder, a leaked password, or overwritten Git history can’t be undone. Those actions stay blocked.</p></div>
+    <div class="card"><h3>✅ Tested work</h3><p>“Done” means done. You stop finding mistakes at the end.</p></div>
+  </div>
+  <div class="grid g3" style="margin-top:16px">
+    <div class="card"><h3>👤 Who it’s for</h3><p>Anyone who uses Claude Code for everyday work, with code or text. You need Claude Code and Python 3 to install it.</p></div>
+    <div class="card"><h3>🧪 Tested for real</h3><p>We hid a bug in the code and asked Claude only to “say done.” The test blocked it. Claude found the bug, fixed it, and only then stopped (<a href="#prova">see the proof</a>).</p></div>
+    <div class="card"><h3>🎁 Free</h3><p>The kit on GitHub, this guide in Portuguese, English, and Spanish, and the source: a talk by the Claude Code team at Anthropic, who work this way (<a href="#fonte">source</a>).</p></div>
   </div>
 </div></section>
 
 <!-- VIDEO: entra o explicavideo do projeto quando publicado -->
 
-<section id="problema"><div class="wrap">
-  <span class="chip">The problem</span>
-  <h2>Three habits that keep you at the <span class="amb">wheel</span></h2>
-  <p class="sub">You ask for a task and can’t step away. Each habit seems careful, but it costs you time and still lets errors slip through.</p>
+<section id="dia"><div class="wrap">
+  <span class="chip">In your day-to-day</span>
+  <h2>How this changes your <span class="amb">day</span></h2>
+  <p class="sub">You don’t need to know how to code to see the difference. Here are three common ways people use AI at work.</p>
   <div class="grid g3">
-    <div class="card"><h3>👀 You watch</h3><p>You read every line Claude writes, afraid it will forget a rule. Often the rule is in a huge CLAUDE.md, full of uppercase IMPORTANT, that gets in the way more than it helps.</p></div>
-    <div class="card"><h3>🖱️ You approve everything</h3><p>You click “allow” command by command, and with so many clicks, reading becomes reflex. In the study shown in the talk, people caught only 14% of dangerous commands.</p></div>
-    <div class="card"><h3>🏁 You find out at the end</h3><p>Claude says “done” and stops. The error shows up later, when you test it or when the client complains.</p></div>
+    <div class="card"><h3>🗂️ “Organize the project files”</h3><p><strong>Today:</strong> you watch, worried that AI might delete the wrong folder.</p><p><strong>With the kit:</strong> it can move, rename, and organize files freely. Deleting a whole folder at once is blocked, so the worst won’t happen.</p></div>
+    <div class="card"><h3>🌐 “Fix the website form”</h3><p><strong>Today:</strong> AI says “done.” You check, and the form is still broken. You ask again, and again.</p><p><strong>With the kit:</strong> before stopping, a test fills out the form. If it fails, AI goes back and fixes it. “Done” means it has been tested.</p></div>
+    <div class="card"><h3>🔑 “Connect the system to the new API”</h3><p><strong>Today:</strong> the API password is in a project file, and you hope AI won’t read it or send it outside.</p><p><strong>With the kit:</strong> the password file and your access keys stay out of AI’s reach. It does the work without seeing the password.</p></div>
   </div>
-  <div class="stats">
-    <div class="stat"><b>2,500 → 30,000+</b><span>code changes per day on the Claude Code team: 2,500 in May, more than 30,000 in September (talk slide).</span></div>
-    <div class="stat"><b>14%</b><span>of dangerous commands were caught by people approving them one by one (study shown in the talk).</span></div>
-    <div class="stat"><b>89%</b><span>of dangerous commands were blocked by auto mode in the same study shown in the talk.</span></div>
+  <div class="prova" style="margin-top:22px">
+    <ol class="tl">
+      <li><b>9:00 a.m. · you give it the task</b><br><span class="mut">and say what “done” means: “the form sends the email, and it arrives.”</span></li>
+      <li><b>9:05 a.m. · you go do something else</b><br><span class="mut">a meeting, lunch, another task. There’s no “allow” button waiting for you.</span></li>
+      <li><b>10:00 a.m. · you come back</b><br><span class="mut">the work is done, the test passed, and nothing you can’t undo was touched.</span></li>
+    </ol>
   </div>
-  <p class="fonte">Source: a talk by Lydia Hallie, from the Claude Code team at Anthropic (link in <a href="#fonte">Where it comes from</a>). The 14% and 89% study was shown in the talk and is not published on Anthropic’s official page.</p>
 </div></section>
 
-<section id="trocas"><div class="wrap">
-  <span class="chip">The method</span>
-  <h2>The three changes, in one example: <span class="amb">switching login to a new API</span></h2>
-  <p class="sub">The same task follows all three changes. An API is the door your system uses to talk to another one: here, login leaves the old door and starts using the new one.</p>
+<!-- VIDEO: entra o explicavideo do projeto quando publicado -->
 
-  <div class="troca"><div class="n">1</div><div>
-    <h3>Stop watching: a lean CLAUDE.md</h3>
-    <p>CLAUDE.md is the note Claude reads before starting. Keep only what Claude <strong>can’t discover by reading the code</strong>. For each line, ask: “Could it figure this out on its own?” If so, delete it.</p>
-    <p>And write calmly. With today’s models, uppercase IMPORTANT and NEVER make results worse, not better.</p>
-    <div class="ex"><b>For login:</b> “Existing customers still sign in through the mobile app; don’t remove the old code” stays, because the code doesn’t say that. “The project is in Python” goes, because Claude can see that on its own.</div>
-  </div></div>
+<section id="como"><div class="wrap">
+  <span class="chip">How it works</span>
+  <h2>Two safeguards, <span class="amb">no jargon</span></h2>
+  <p class="sub">The kit doesn’t make AI smarter. It puts two limits around it, so you can step away.</p>
+  <div class="grid g2">
+    <div class="card"><h3>🔒 1. The guard</h3><p>It works like a locked room: AI can move around the house but can’t go in there. To decide what stays locked, the kit asks one question: <strong>“If AI gets this wrong once, can you undo it?”</strong></p><p><strong>If you can undo it</strong> (edit text or change code that Git tracks), it’s allowed.<br><strong>If you can’t</strong> (delete a whole folder, read passwords, or erase the project history), it stays locked in every mode, even if AI tries.</p></div>
+    <div class="card"><h3>✅ 2. The test before “done”</h3><p>It works like an inspector at the end of a production line. You say once what “done” means, and a test checks every time AI tries to finish.</p><p><strong>It passes:</strong> AI delivers the work.<br><strong>It fails:</strong> AI gets the reason, goes back, and fixes it. To prevent an endless loop, it stops and calls you after 3 tries.</p></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>🤝 What about everything else?</h3><p>Actions you can undo happen on their own, without asking at every step. Claude Code’s automatic mode decides. If AI makes a mistake, you can undo it. The kit doesn’t promise AI will never make a mistake. It promises that mistakes you can’t fix won’t happen, and that “done” means done.</p></div>
+</div></section>
 
-  <div class="troca"><div class="n">2</div><div>
-    <h3>Stop approving everything: the undo test</h3>
-    <p>Let Claude work on its own with <strong>auto mode</strong>, a mode where an automatic checker decides what can run. For everything else, ask one question: <strong>“If Claude gets this wrong once, can you undo it?”</strong></p>
-    <p>If you can undo it (edit code, anything git can undo): let it handle it. If you can’t (delete work, read a password, send something outside): make it a <strong>blocking rule</strong> in the settings. A rule in the prompt is a request; a rule in the settings applies before auto mode and in every mode.</p>
-    <p>The rule checks the command text, not what it does. That’s why the kit also turns on <strong>sandbox</strong>, a closed box where the command can only read folders and talk to sites you’ve allowed.</p>
-    <div class="ex"><b>For login:</b> editing the login file can be undone, so Claude works on its own. Reading the <code>.env</code> file, which holds the new API password, can’t be undone: the rule blocks it.</div>
-  </div></div>
-
-  <div class="troca"><div class="n">3</div><div>
-    <h3>Check along the way: say what done looks like</h3>
-    <p>“Switch login to the new API” can lead to very different outcomes that all look right from a distance:</p>
-    <div class="vs">
-      <div><strong>Forgot</strong>It changed, but login still calls the old API.<span class="r bad">✗ not done</span></div>
-      <div><strong>Logged out</strong>It changed and logged out everyone who was already signed in.<span class="r bad">✗ not done</span></div>
-      <div><strong>Correct</strong>It uses the new API and no one lost their session.<span class="r ok">✓ done</span></div>
-    </div>
-    <p style="margin-top:1em">That’s why the request says <strong>what done looks like</strong> (“login uses the new API and no one is logged out”), and each part has a check. A <strong>hook</strong> enforces it: a script Claude Code runs on its own when Claude tries to stop. If the check fails, the hook responds with code <strong>2</strong>, which means “go back and fix it.” With code 1, Claude Code only shows the error and Claude carries on as if it were done.</p>
-    <div class="ex"><b>For login:</b> the kit includes all three versions. The hook sends Claude back to fix the two wrong ones and lets it stop only on the correct one.</div>
-  </div></div>
+<section id="comecar"><div class="wrap">
+  <span class="chip">How to start</span>
+  <h2>Ask your AI to <span class="amb">review the kit</span></h2>
+  <p class="sub">You don’t need to install anything by hand or understand the files. AI reads the kit, looks at your project, and tells you what might help.</p>
+  <div class="grid g3">
+    <div class="card"><h3>1. Open your AI in the project</h3><p>Open Claude Code or Codex in the folder where you work on your project.</p></div>
+    <div class="card"><h3>2. Paste the request below</h3><p>It asks AI to read the kit, look at your project, and explain things in plain English without changing anything yet.</p></div>
+    <div class="card"><h3>3. Say yes to what makes sense</h3><p>AI shows you a plan. Approve what you want, and it installs only those parts.</p></div>
+  </div>
+  <div class="pedido" style="margin-top:20px;position:relative">
+<pre id="pedidoTxt" style="white-space:pre-wrap">Read the “No-Damage AI” kit at https://github.com/inematds/ia-sem-estrago (the README explains everything, including installation).
+Then look at this project and answer in plain English:
+1. What could not be undone if you made a mistake here (deleting things, passwords, sending something outside)?
+2. What test or check proves that a task is complete in this project?
+3. Which parts of the kit would help me, and which would not?
+Don’t change anything yet. Show me the plan and wait for me to say yes.</pre>
+    <button class="btn" id="copiarPedido" style="margin-top:10px">Copy the request</button>
+  </div>
+  <p class="mut" style="margin-top:16px">The kit is built for <strong>Claude Code</strong>: the guards and the test are its settings. <strong>Codex</strong> can also read the kit and tell you whether it fits your project.</p>
+  <div class="card" style="margin-top:16px"><h3>🛠️ Technical user who prefers to install it by hand?</h3><p>Step-by-step installation, with the commands, files, and tests, is in the GitHub README.</p><p><a class="btn ghost" href="https://github.com/inematds/ia-sem-estrago/blob/main/README.en.md" target="_blank" rel="noopener">View the technical installation guide</a></p></div>
 </div></section>
 
 <section id="prova"><div class="wrap">
   <span class="chip">The proof</span>
-  <h2>The hook blocked “done,” and Claude <span class="amb">went back and fixed it</span></h2>
-  <p class="sub">This isn’t theory. The kit’s hook was run for real in Claude Code. To isolate the hook, the proof used a small test folder with an intentional error: the <code>soma</code> function subtracted instead of adding. The same hook checks login in step 7 of the guide.</p>
+  <h2>We tested it for real: AI said “done” too soon, and <span class="amb">the kit stopped it</span></h2>
+  <p class="sub">We hid a bug on purpose in a small project: an addition that subtracted. Then we gave Claude one instruction: “reply only: done.”</p>
   <div class="prova">
     <ol class="tl">
-      <li><b>Claude said “done” and tried to stop.</b><br><span class="mut">The request was just this: “Reply only: done.”</span></li>
-      <li><b>The hook ran the test, saw the failure, and responded with 2.</b><br><span class="mut">It also sent the test output saying what broke.</span></li>
-      <li><b>Claude went back, found the error, fixed it, and checked again.</b><br><span class="mut">It stopped only when the test passed.</span></li>
+      <li><b>Claude said “done” and tried to stop.</b><br><span class="mut">Without the kit, the conversation would have ended there, with the bug hidden.</span></li>
+      <li><b>The test ran, found that the addition was wrong, and told Claude to go back.</b><br><span class="mut">It also explained what went wrong.</span></li>
+      <li><b>Claude found the bug, fixed it, and checked again.</b><br><span class="mut">It stopped only after the test passed.</span></li>
     </ol>
-    <blockquote>“The test failed because <code>soma()</code> in <code>calc.py</code> subtracted instead of adding (<code>a - b</code>). I changed it to <code>a + b</code> and ran the check again: the test passes (<code>OK</code>).”</blockquote>
-    <p class="rod">Claude’s final response. Claude Code 2.1.326, with a subscription, Nov 17, 2026, in <code>acceptEdits</code> mode (accepts edits without asking). With code 1 instead of 2, the “done” in the first response would have been the final response. Proof summary: <a href="https://github.com/inematds/fora-do-volante/blob/main/exemplo/PROVA.md" target="_blank" rel="noopener">exemplo/PROVA.md (in Portuguese)</a>.</p>
+    <blockquote>“The test failed because the addition subtracted instead of adding. I changed it and ran the check again: the test passes.”</blockquote>
+    <p class="rod">Claude’s final response, in Claude Code using the subscription, on November 17, 2026. Full record: <a href="https://github.com/inematds/ia-sem-estrago/blob/main/exemplo/PROVA.md" target="_blank" rel="noopener">PROVA.md</a>.</p>
   </div>
 </div></section>
 
 <section id="fonte"><div class="wrap">
   <span class="chip">Where it comes from</span>
-  <h2>From a talk by the <span class="amb">Claude Code</span> team</h2>
-  <p class="sub">The method and numbers come from “Rethinking Claude Code Best Practices,” a talk by Lydia Hallie, from the Claude Code team at Anthropic, at the AI Engineer conference.</p>
-  <div class="grid g2">
-    <div class="card"><h3>🎤 The talk</h3><p><a href="https://www.youtube.com/watch?v=vlfCjWuv4es" target="_blank" rel="noopener">Watch on YouTube</a>. The 2,500 and 30,000+ figures are on one of its slides.</p></div>
-    <div class="card"><h3>📏 What was checked</h3><p>The settings names (blocking, sandbox, hooks, auto mode) were checked against the official Claude Code documentation on Nov 17, 2026. The 14% and 89% study was only shown in the talk.</p></div>
+  <h2>The team behind Claude Code <span class="amb">already works this way</span></h2>
+  <p class="sub">The idea comes from a talk by Lydia Hallie, from the Claude Code team at Anthropic. They stopped watching AI, blocked actions they couldn’t undo, and started checking “done” with tests.</p>
+  <div class="stats">
+    <div class="stat"><b>2,500 → 30,000+</b><span>code changes per day on the Claude Code team, from May to September (talk slide).</span></div>
+    <div class="stat"><b>14%</b><span>of dangerous commands were caught by people who approved them one by one. Clicking “allow” all the time doesn’t protect you.</span></div>
+    <div class="stat"><b>89%</b><span>were blocked by automatic mode. The rest are why the guard matters: safety from actions you can’t undo shouldn’t depend on luck.</span></div>
   </div>
-  <p class="fonte">Want to use it? The technical section below has the kit and the step-by-step guide, from beginning to end. <a href="#guia">Go to the step-by-step guide ↓</a></p>
+  <p class="fonte">Source: <a href="https://www.youtube.com/watch?v=vlfCjWuv4es" target="_blank" rel="noopener">talk on YouTube</a>. The 14% and 89% study was shown in the talk and is not published on Anthropic’s official page.</p>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <span class="chip">Common questions</span>
+  <h2>Before you <span class="amb">start</span></h2>
+  <div class="grid g2">
+    <div class="card"><h3>Do I need to know how to code?</h3><p>No. Paste the request, read the plan AI shows you, and say yes or no. AI handles the installation.</p></div>
+    <div class="card"><h3>Is it only for code?</h3><p>No. It works for any job AI does in your files: writing, spreadsheets, reports, and websites. For a report, “done” might mean “every number matches the spreadsheet.”</p></div>
+    <div class="card"><h3>Will AI be out of control?</h3><p>There are fewer clicks, not less control. Actions you can’t undo stay locked, and you decide what “done” means.</p></div>
+    <div class="card"><h3>What if I already have my own settings?</h3><p>The kit doesn’t delete anything you have. The request tells AI to show the plan first, then it adds what you approve to your existing setup.</p></div>
+    <div class="card"><h3>How much does it cost?</h3><p>Nothing. The kit and this guide are free. You only need the AI you already use.</p></div>
+    <div class="card"><h3>Does it work on any computer?</h3><p>It works anywhere Claude Code runs: Windows, Mac, and Linux. AI checks this during its review.</p></div>
+  </div>
+  <p class="fonte" style="margin-top:22px">What does AI do in your work today that <strong>you couldn’t undo</strong> if it went wrong? Free at inema.club, right on the web.</p>
 </div></section>
 </main>
-
-<div id="tecnico" class="techhead"><div class="wrap">
-  <span class="chip">Technical section</span>
-  <h2>The kit: <span class="amb">for people who want to apply it to their own project</span></h2>
-  <p class="sub">From here on, this is the technical section: the kit files, how they work, and the process from beginning to end, with commands. You <strong>don’t need</strong> this section to understand what came before.</p>
-</div></div>
-
-<div class="techzone">
-<section id="oque"><div class="wrap">
-  <span class="chip">What it is</span>
-  <h2>The kit files</h2>
-  <p class="sub">Everything is plain text to copy. Nothing installs itself.</p>
-  <div class="tblwrap"><table class="tbl">
-    <thead><tr><th>File</th><th>What it’s for</th></tr></thead>
-    <tbody>
-      <tr><td><code>kit/.claude/settings.json</code></td><td>Blocking rules (<code>.env</code>, <code>~/.ssh</code>, forced push, <code>rm -rf</code>, <code>reset --hard</code>), sandbox enabled, and <code>Stop</code> and <code>TaskCompleted</code> hooks.</td></tr>
-      <tr><td><code>kit/.claude/hooks/pronto.sh</code></td><td>Runs the check; if it fails, exits with 2 and explains why; at most 3 consecutive retries.</td></tr>
-      <tr><td><code>kit/teste-do-desfazer.md (in Portuguese)</code></td><td>The question that decides what goes on the blocking list.</td></tr>
-      <tr><td><code>kit/como-e-pronto.md (in Portuguese)</code></td><td>Request template with “done looks like…” and one check per task.</td></tr>
-      <tr><td><code>kit/CLAUDE.md.exemplo (in Portuguese)</code></td><td>A lean CLAUDE.md to use as a template.</td></tr>
-      <tr><td><code>ferramentas/conferir_volante.py</code></td><td>Checks a project against the three changes. It only reads; it changes nothing.</td></tr>
-      <tr><td><code>exemplo/</code></td><td>Login in three versions (forgot, logged out, correct) and <code>PROVA.md</code> with the hook running for real.</td></tr>
-    </tbody>
-  </table></div>
-</div></section>
-
-<section id="fluxo"><div class="wrap">
-  <span class="chip">How it works</span>
-  <h2>From the request to “done” for real</h2>
-  <p class="sub">Each change becomes part of the settings. A task follows this path:</p>
-  <div class="flow">
-    <span>Request with “done looks like…”</span><span class="arr">→</span>
-    <span>Claude works in auto mode</span><span class="arr">→</span>
-    <span>Blocking rule + sandbox stop what can’t be undone</span><span class="arr">→</span>
-    <span>Claude tries to stop</span><span class="arr">→</span>
-    <span>Hook runs the check</span><span class="arr">→</span>
-    <span>Failed: exits with 2, goes back · Passed: done</span>
-  </div>
-  <div class="grid g3" style="margin-top:26px">
-    <div class="card"><h3>Permission order</h3><p>The rules have three lists: <code>deny</code> (blocks), <code>ask</code> (asks), and <code>allow</code> (permits). Claude Code checks <code>deny</code> first, before the auto mode checker, and in every mode, including <code>bypassPermissions</code> (the mode that doesn’t ask anything).</p></div>
-    <div class="card"><h3>Why Stop and TaskCompleted</h3><p>These are the points when Claude tries to stop or finish a task. <code>PostToolUse</code> can’t block, even with 2, because the tool has already run.</p></div>
-    <div class="card"><h3>Loop protection</h3><p><code>pronto.sh</code> blocks at most 3 times in a row (<code>PRONTO_MAX</code>). After that, it warns you and lets Claude stop so you can take a look.</p></div>
-  </div>
-  <p style="margin-top:22px" class="mut">The hook gets its check from, in this order: the <code>PRONTO_CMD</code> variable, the <code>.claude/pronto.cmd</code> file (one line), or detection of <code>npm test</code> / <code>python3 -m unittest</code>. If there’s nothing to check, it doesn’t block. In the login example, the check runs the tests in <code>exemplo/login-api/tests/</code>: one checks that login uses the new API, the other that no one is logged out.</p>
-<pre><span class="c"># .claude/pronto.cmd in the login example</span>
-<span class="k">python3 -m unittest discover -s tests -q</span></pre>
-  <p class="mut">If you add a <code>grep</code> to the check, make sure the folder exists: <code>! grep -rn "x" src/</code> always passes when there’s no <code>src/</code>, so “done” is reported falsely.</p>
-  <p class="mut">The kit’s sandbox only allows network access to <code>github.com</code>, <code>pypi.org</code>, <code>files.pythonhosted.org</code>, and <code>registry.npmjs.org</code>. If your project talks to another site (the new login API, for example), add its domain to <code>sandbox.network.allowedDomains</code> in <code>.claude/settings.json</code>.</p>
-</div></section>
-
-<section id="pre"><div class="wrap">
-  <span class="chip">Requirements</span>
-  <h2>What you need</h2>
-  <p class="sub">Not much. The kit and tests use only what comes with Python 3.</p>
-  <div class="grid g3">
-    <div class="card"><h3>Claude Code</h3><p>With your project open in it. The kit was tested in Claude Code 2.1.326; the <code>/auto-mode-setup</code>, <code>/sandbox</code>, and <code>/doctor prompt-audit</code> commands were used in that version.</p><pre><span class="k">claude --version</span></pre></div>
-    <div class="card"><h3>Python 3 and git</h3><p>For the checker, tests, and downloading the kit.</p><pre><span class="k">python3 --version</span>
-<span class="k">git --version</span></pre></div>
-    <div class="card"><h3>Sandbox on Linux/WSL2</h3><p>The sandbox needs <code>bubblewrap</code> and <code>socat</code>. On macOS, there’s nothing to install.</p><pre><span class="c"># Debian/Ubuntu</span>
-<span class="k">sudo apt install bubblewrap socat</span></pre></div>
-  </div>
-</div></section>
-
-<section id="guia"><div class="wrap">
-  <span class="chip">Setup guide · step by step</span>
-  <h2>The process, <span class="amb">from beginning to end</span></h2>
-  <p class="sub">Replace <code>~/my-project</code> with your project folder. ⚙️ = script, 🧠 = you (sometimes together with Claude).</p>
-
-  <div class="step"><div class="b">0</div><div>
-    <h3>Download the kit <span class="quem">🧠 you</span></h3>
-    <p>Clone the repository and go into its folder.</p>
-<pre><span class="k">git clone https://github.com/inematds/fora-do-volante.git</span>
-<span class="k">cd fora-do-volante</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">1</div><div>
-    <h3>Check your project <span class="quem">⚙️ script</span></h3>
-    <p>Shows what’s missing in each change. It’s normal to see failures the first time: this is your starting point.</p>
-<pre><span class="k">python3 ferramentas/conferir_volante.py ~/my-project</span>  <span class="c"># [falha] troca 2 de 3: ... / fora do volante: N falha(s)</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">2</div><div>
-    <h3>Copy the settings and hook <span class="quem">🧠 you</span></h3>
-    <p>The <code>-n</code> won’t overwrite anything (newer versions of <code>cp</code> print a warning about <code>-n</code>; that’s normal): if your project already has a <code>.claude/settings.json</code>, it stays as it is, and you merge the kit’s keys by hand. The hook records retries in <code>.claude/.pronto-bloqueios</code>; add this file to your project’s <code>.gitignore</code>.</p>
-<pre><span class="k">cp -rn kit/.claude ~/my-project/</span>
-<span class="k">echo ".claude/.pronto-bloqueios" >> ~/my-project/.gitignore</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">3</div><div>
-    <h3>Set the “done” check <span class="quem">🧠 you</span></h3>
-    <p>One line with the command that proves the task is done. Replace it with your project’s test command (<code>npm test</code>, <code>pytest</code>…): if it always fails, the hook holds every stop for up to 3 retries. Use the template in <code>kit/como-e-pronto.md</code> (in Portuguese) in your request.</p>
-<pre><span class="k">echo "python3 -m unittest discover -s tests -q" > ~/my-project/.claude/pronto.cmd</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">4</div><div>
-    <h3>Turn on auto mode and adapt it to your setup <span class="quem">🧠 you + Claude</span></h3>
-    <p>Starting with version 2.1.283, Claude Code starts in auto mode (checked on Nov 17, 2026). If the status bar doesn’t show <code>⏵⏵ auto mode on</code>, launch it with the option below or press Shift+Tab until it appears. It requires a compatible model, and a company can turn it off for everyone.</p>
-    <p>Then run <code>/auto-mode-setup</code>: it drafts <code>autoMode.environment</code>, a description of your setup (repository, services, what belongs to you) that the auto mode checker uses to decide what can run. This command is available on Pro, Max, Ultra, Team, and Enterprise plans and with a Claude Console key. Both are part of Claude Code, not the kit.</p>
-<pre><span class="k">claude --permission-mode auto</span>   <span class="c"># or press Shift+Tab until "⏵⏵ auto mode on" appears</span>
-<span class="k">/auto-mode-setup</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">5</div><div>
-    <h3>Turn on and test the sandbox <span class="quem">🧠 you</span></h3>
-    <p>In Claude Code. On Linux/WSL2, install <code>bubblewrap</code> and <code>socat</code> first (requirements).</p>
-<pre><span class="k">/sandbox</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">6</div><div>
-    <h3>Trim down CLAUDE.md <span class="quem">🧠 you + Claude</span></h3>
-    <p>Run the audit and apply the test “could it figure this out by reading the code?” to each line. Template: <code>kit/CLAUDE.md.exemplo</code> (in Portuguese).</p>
-<pre><span class="k">/doctor prompt-audit</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">7</div><div>
-    <h3>See the hook enforce the check <span class="quem">⚙️ script</span></h3>
-    <p>Back in the kit folder, run the hook on the three login versions. The two incorrect ones exit with 2; the correct one, with 0.</p>
-<pre><span class="k">bash exemplo/rodar.sh</span>
-<span class="c">esqueceu: saída 2 → o Claude volta e conserta</span>
-<span class="c">deslogou: saída 2 → o Claude volta e conserta</span>
-<span class="c">certo: saída 0 → pronto de verdade</span></pre>
-  </div></div>
-
-  <div class="step"><div class="b">8</div><div>
-    <h3>Check again <span class="quem">⚙️ script</span></h3>
-    <p>Use the same command as in step 1. You’re done when it shows <code>fora do volante: ok</code>. The checker reads the files (blocking rules, sandbox enabled, stop hook, CLAUDE.md); it can’t tell whether you completed steps 4 and 5 in Claude Code.</p>
-<pre><span class="k">python3 ferramentas/conferir_volante.py ~/my-project</span>  <span class="c"># fora do volante: ok</span></pre>
-  </div></div>
-</div></section>
-
-<section id="testes"><div class="wrap">
-  <span class="chip">Tests</span>
-  <h2>The kit checks itself</h2>
-  <p class="sub">11 tests cover the hook (exits with 2, with 0, stops after the maximum, reads <code>pronto.cmd</code>), the login example, and the checker. They only need Python 3.</p>
-<pre><span class="k">python3 -m unittest discover -s tests -v</span>   <span class="c"># Ran 11 tests ... OK</span></pre>
-</div></section>
-</div>
 
 <footer>
   <div class="wrap">
     <div class="pill">Claude Code</div><div class="pill">bash</div><div class="pill">Python 3</div><div class="pill">MIT</div>
-    <p style="margin-top:18px">Hands off the wheel · free at inema.club, online ·
-      <a href="https://github.com/inematds/fora-do-volante">inematds/fora-do-volante</a> ·
+    <p style="margin-top:18px">No-Damage AI · free at inema.club, right on the web ·
+      <a href="https://github.com/inematds/ia-sem-estrago">inematds/ia-sem-estrago</a> ·
       <a href="https://inema.club">INEMA.CLUB</a></p>
   </div>
 </footer>
 
 <script>
   (function(){
-    var KEY='fora-do-volante-theme';
+    var KEY='ia-sem-estrago-theme';
     var b=document.body, t=document.getElementById('themeToggle');
     try{ if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; } }catch(e){}
     t.addEventListener('click',function(){
       var light=b.classList.toggle('light');
       t.textContent=light?'☀️':'🌙';
       try{ localStorage.setItem(KEY, light?'light':'dark'); }catch(e){}
+    });
+  })();
+  (function(){
+    var bt=document.getElementById('copiarPedido'), tx=document.getElementById('pedidoTxt');
+    if(!bt||!tx) return;
+    bt.addEventListener('click',function(){
+      try{ navigator.clipboard.writeText(tx.textContent).then(function(){ bt.textContent='Copied ✓'; setTimeout(function(){bt.textContent='Copy the request';},2000); }); }catch(e){}
     });
   })();
 </script>

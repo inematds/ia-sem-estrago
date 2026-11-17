@@ -1,4 +1,4 @@
-"""Testes do kit fora do volante. Rodar: python3 -m unittest discover -s tests -v"""
+"""Testes do kit IA sem estrago. Rodar: python3 -m unittest discover -s tests -v"""
 import json
 import os
 import subprocess
@@ -10,7 +10,7 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 HOOK = RAIZ / "kit/.claude/hooks/pronto.sh"
 sys.path.insert(0, str(RAIZ / "ferramentas"))
-import conferir_volante as cv  # noqa: E402
+import conferir as cv  # noqa: E402
 
 
 def rodar_hook(projeto, cmd, extra_env=None):
