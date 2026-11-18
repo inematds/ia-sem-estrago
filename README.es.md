@@ -10,6 +10,9 @@
 
 Para entender qué hace el kit y cómo cambia tu día a día (sin tecnicismos): **https://inematds.github.io/ia-sem-estrago/guia/es/**
 
+🎬 Video (ya usas Claude Code, en portugués): https://www.youtube.com/watch?v=uBUpckFw1Xg  
+🎬 Video (estás empezando, en portugués): https://www.youtube.com/watch?v=JBiVZj8z-Ms
+
 ## Qué es
 
 El kit añade dos protecciones a Claude Code:

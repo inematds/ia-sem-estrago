@@ -10,6 +10,9 @@
 
 To understand what the kit does and how it changes your day (without the technical details): **https://inematds.github.io/ia-sem-estrago/guia/en/**
 
+🎬 Video (already using Claude Code, in Portuguese): https://www.youtube.com/watch?v=uBUpckFw1Xg  
+🎬 Video (just starting, in Portuguese): https://www.youtube.com/watch?v=JBiVZj8z-Ms
+
 ## What it is
 
 The kit adds two safeguards to Claude Code:

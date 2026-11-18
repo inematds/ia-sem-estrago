@@ -10,6 +10,9 @@
 
 Para entender o que o kit faz e como ele muda o seu dia (sem parte técnica): **https://inematds.github.io/ia-sem-estrago/guia/**
 
+🎬 Vídeo (quem já usa o Claude Code): https://www.youtube.com/watch?v=uBUpckFw1Xg  
+🎬 Vídeo (quem está começando): https://www.youtube.com/watch?v=JBiVZj8z-Ms
+
 ## O que é
 
 O kit põe duas proteções no Claude Code:

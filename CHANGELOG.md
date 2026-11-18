@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.5 — 18/11/2026
+- Dois vídeos no guia (PT/EN/ES) e nos READMEs: para quem já usa o Claude Code (https://www.youtube.com/watch?v=uBUpckFw1Xg) e para quem está começando (https://www.youtube.com/watch?v=JBiVZj8z-Ms). Narração em português, com o nome antigo "fora do volante".
+
 ## 1.2.4 — 17/11/2026
 - "Pronto" para texto: `kit/exemplos/pronto-texto.json`, hook `Stop` do tipo `agent` que confere fonte e número contra `dados.csv`. Provado: relatório com 100 virou 120 com link (`exemplo/PROVA.md`, prova 2).
 - Conectores e navegador: `kit/exemplos/conectores.json` com regras `ask` (enviar, apagar, lixeira, remover, publicar), que pedem confirmação em todo modo.
