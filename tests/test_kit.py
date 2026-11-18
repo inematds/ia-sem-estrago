@@ -78,6 +78,18 @@ class Conferidor(unittest.TestCase):
         self.assertTrue(s["sandbox"]["enabled"])
         self.assertIn("Stop", s["hooks"])
         self.assertIn("TaskCompleted", s["hooks"])
+        deny = s["permissions"]["deny"]
+        for regra in ["Read(./.env)", "Read(./.env.*)", "Read(./secrets/**)", "Read(~/.ssh/**)", "Bash(rm -rf *)"]:
+            self.assertIn(regra, deny)
+
+    def test_exemplos_sao_json_com_chaves_oficiais(self):
+        con = json.loads((RAIZ / "kit/exemplos/conectores.json").read_text())
+        self.assertTrue(all(r.startswith("mcp__") for r in con["permissions"]["ask"]))
+        txt = json.loads((RAIZ / "kit/exemplos/pronto-texto.json").read_text())
+        h = txt["hooks"]["Stop"][0]["hooks"][0]
+        self.assertEqual(h["type"], "agent")
+        self.assertIn("$ARGUMENTS", h["prompt"])
+        self.assertIn('"ok": false', h["prompt"])
 
     def test_projeto_ruim_reprova_nas_tres_trocas(self):
         with tempfile.TemporaryDirectory() as t:

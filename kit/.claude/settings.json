@@ -3,9 +3,11 @@
     "deny": [
       "Read(./.env)",
       "Read(./.env.*)",
+      "Edit(./.env)",
+      "Read(./secrets/**)",
+      "Edit(./secrets/**)",
       "Read(~/.ssh/**)",
       "Read(~/.aws/credentials)",
-      "Edit(./.env)",
       "Bash(git push --force *)",
       "Bash(git push -f *)",
       "Bash(git reset --hard *)",
@@ -15,24 +17,40 @@
   "sandbox": {
     "enabled": true,
     "filesystem": {
-      "denyRead": ["~/.ssh", "~/.aws", "~/**/.env"]
+      "denyRead": [
+        "~/.ssh",
+        "~/.aws",
+        "~/**/.env",
+        "~/**/secrets"
+      ]
     },
     "network": {
-      "allowedDomains": ["github.com", "pypi.org", "files.pythonhosted.org", "registry.npmjs.org"]
+      "allowedDomains": [
+        "github.com",
+        "pypi.org",
+        "files.pythonhosted.org",
+        "registry.npmjs.org"
+      ]
     }
   },
   "hooks": {
     "Stop": [
       {
         "hooks": [
-          { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/pronto.sh" }
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/pronto.sh"
+          }
         ]
       }
     ],
     "TaskCompleted": [
       {
         "hooks": [
-          { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/pronto.sh" }
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/pronto.sh"
+          }
         ]
       }
     ]

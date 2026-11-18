@@ -62,6 +62,8 @@
   .tgl:hover{border-color:var(--amb)}
   .btn{display:inline-block;background:var(--fill);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
   .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  nav .links a.sec{white-space:nowrap}
+  @media(max-width:1360px){nav .links a.opt{display:none}}
   @media(max-width:860px){nav .links a.sec{display:none}}
   @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
   .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
@@ -124,6 +126,7 @@
   .vs strong{display:block;font-family:Sora;margin-bottom:.25em}
   .vs .r{display:block;margin-top:.5em;font-weight:600}
   .vs .r.bad{color:var(--bad)} .vs .r.ok{color:var(--ok)}
+  .card ul{margin:8px 0 0;padding-left:20px}.card li{margin:5px 0}
   /* prova */
   .prova{background:var(--card);border:1px solid var(--amb);border-radius:16px;padding:26px 26px 22px;margin-top:6px}
   body.light .prova{border-color:#EAB308}
@@ -161,10 +164,11 @@
   <div class="links">
     <a class="sec" href="#explicado">Lo que ganas</a>
     <a class="sec" href="#dia">En tu día</a>
-    <a class="sec" href="#como">Cómo funciona</a>
+    <a class="sec opt" href="#como">Cómo funciona</a>
+    <a class="sec" href="#lista">Lista clara</a>
     <a class="sec" href="#comecar">Cómo empezar</a>
     <a class="sec" href="#base">Base Anthropic</a>
-    <a class="sec" href="#prova">La prueba</a>
+    <a class="sec opt" href="#prova">La prueba</a>
     <span class="lang"><a href="../">PT</a><a href="../en/">EN</a><a class="on" href="./">ES</a></span>
     <button class="tgl" id="themeToggle" aria-label="Cambiar tema" title="Cambiar tema">🌙</button>
     <a class="btn" href="https://github.com/inematds/ia-sem-estrago" target="_blank" rel="noopener">GitHub</a>
@@ -231,11 +235,12 @@
 <section id="dia"><div class="wrap">
   <span class="chip">En tu día a día</span>
   <h2>Cómo cambia tu <span class="amb">día</span></h2>
-  <p class="sub">No hace falta que programes para notar la diferencia. Aquí tienes tres situaciones comunes de quienes usan la IA para trabajar.</p>
-  <div class="grid g3">
+  <p class="sub">No necesitas programar para notar la diferencia. Mira cuatro situaciones comunes de quienes usan IA para trabajar.</p>
+  <div class="grid g2">
     <div class="card"><h3>🗂️ «Organiza los archivos del proyecto»</h3><p><strong>Hoy:</strong> miras con miedo a que la IA borre la carpeta equivocada.</p><p><strong>Con el kit:</strong> mueve, cambia el nombre y ordena los archivos. Borrar una carpeta entera de una vez está bloqueado, así que no ocurre lo peor.</p></div>
     <div class="card"><h3>🌐 «Arregla el formulario del sitio»</h3><p><strong>Hoy:</strong> la IA dice «listo», revisas y el formulario sigue roto. Se lo pides una y otra vez.</p><p><strong>Con el kit:</strong> antes de detenerse, una prueba completa el formulario. Si falla, vuelve y lo corrige. Recibes un «listo» probado.</p></div>
     <div class="card"><h3>🔑 «Conecta el sistema a la nueva API»</h3><p><strong>Hoy:</strong> la contraseña de la API está en un archivo del proyecto y esperas que la IA no la lea ni la envíe fuera.</p><p><strong>Con el kit:</strong> los archivos con contraseñas y tus claves de acceso quedan fuera de su alcance. Hace el trabajo sin ver la contraseña.</p></div>
+    <div class="card"><h3>📊 «Prepara el informe del mes»</h3><p><strong>Hoy:</strong> la IA escribe bien, pero cambia un número e inventa una fuente. Solo te das cuenta en la reunión.</p><p><strong>Con el kit:</strong> antes de entregarlo, otra IA verifica el texto con tu hoja de cálculo. Lo probamos: el informe decía 100 y la hoja de cálculo, 120. La IA fue detenida, lo corrigió a 120 y añadió el enlace a la fuente.</p></div>
   </div>
   <div class="prova" style="margin-top:22px">
     <ol class="tl">
@@ -257,6 +262,42 @@
     <div class="card"><h3>✅ 2. La prueba antes de decir «listo»</h3><p>Es como el inspector al final de una línea de producción. Explicas una vez qué significa «listo» y una prueba lo comprueba cada vez que la IA intenta terminar.</p><p><strong>La pasa:</strong> entrega el trabajo.<br><strong>Falla:</strong> recibe el motivo, vuelve y lo corrige. Para no quedarse en un ciclo, tras 3 intentos se detiene y te avisa.</p></div>
   </div>
   <div class="card" style="margin-top:16px"><h3>🤝 ¿Y el resto?</h3><p>La IA hace sola todo lo que se puede deshacer, sin pedir permiso a cada paso: decide el modo automático de Claude Code. Si se equivoca, puedes deshacerlo. El kit no promete una IA que nunca se equivoca. Promete que no ocurran errores irreparables y que «listo» signifique listo.</p></div>
+</div></section>
+
+<section id="lista"><div class="wrap">
+  <span class="chip">Lista clara</span>
+  <h2>Lo que el kit <span class="amb">hace y no hace</span></h2>
+  <p class="sub">Todo de un vistazo. Si solo lees una parte de esta guía, lee esta.</p>
+  <div class="grid g2">
+    <div class="card"><h3>🔒 Siempre queda bloqueado</h3><ul>
+      <li>Borrar una carpeta completa de una sola vez</li>
+      <li>Leer los archivos de contraseñas del proyecto (<code>.env</code>, <code>.env.local</code>, la carpeta <code>secrets</code>)</li>
+      <li>Leer tus claves de acceso de la computadora</li>
+      <li>Borrar o sobrescribir el historial del proyecto</li>
+    </ul></div>
+    <div class="card"><h3>✋ Pide tu confirmación</h3><ul>
+      <li>Enviar un correo o mensaje mediante un conector</li>
+      <li>Borrar o enviar a la papelera un archivo de Drive u otro servicio</li>
+      <li>Publicar algo fuera del proyecto</li>
+      <li>También se aplica a quienes abren Claude sin restricciones</li>
+    </ul></div>
+    <div class="card"><h3>✅ Se exige antes de decir «listo»</h3><ul>
+      <li>Código: pasan las pruebas del proyecto</li>
+      <li>Texto: toda afirmación tiene una fuente y cada número coincide con la hoja de cálculo</li>
+      <li>La IA muestra el resultado real de la comprobación, no un resumen</li>
+      <li>Después de 3 intentos sin pasar, se detiene y te avisa</li>
+    </ul></div>
+    <div class="card"><h3>🟢 Sigue por su cuenta</h3><ul>
+      <li>Crear, editar, mover y cambiar el nombre de archivos</li>
+      <li>Instalar lo que el proyecto ya requiere</li>
+      <li>Todo lo que se puede deshacer</li>
+    </ul></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>⚠️ Lo que el kit no hace</h3><ul>
+    <li>No evita errores que se pueden deshacer: tú los reviertes.</li>
+    <li>No protege lo que haces fuera de Claude Code.</li>
+    <li>No adivina qué significa «listo»: lo dices una vez y el kit lo exige siempre.</li>
+  </ul></div>
 </div></section>
 
 <section id="comecar"><div class="wrap">
@@ -305,6 +346,8 @@ No cambies nada todavía. Muéstrame el plan y espera a que te diga que sí.</pr
     <div class="card"><h3>¿La IA no pierde el control?</h3><p>Hay menos clics, pero no menos control. Lo irreversible sigue bloqueado y tú decides qué significa «listo».</p></div>
     <div class="card"><h3>¿Y si ya tengo mis propios ajustes?</h3><p>El kit no borra nada tuyo. Le pide a la IA que te muestre el plan primero. Luego combina lo que apruebes con lo que ya tienes.</p></div>
     <div class="card"><h3>¿Cuánto cuesta?</h3><p>Nada. El kit y esta guía son gratis. Solo necesitas la IA que ya usas.</p></div>
+    <div class="card"><h3>¿Y si abro Claude «sin restricciones»?</h3><p>Quienes lo abren con <code>--dangerously-skip-permissions</code> siguen protegidos: lo probamos y el bloqueo y la prueba de «listo» siguieron funcionando. Lo que desaparece es el filtro del modo automático, que revisaba todo lo demás. Por eso preferimos el modo automático y usar el kit en el proyecto.</p></div>
+    <div class="card"><h3>¿Y el navegador y los conectores?</h3><p>Si Claude abre el navegador o usa Gmail y Drive, la caja cerrada no lo cubre. El kit incluye una regla para que la IA te pida confirmación antes de enviar, borrar o publicar.</p></div>
     <div class="card"><h3>¿Funciona en cualquier computadora?</h3><p>Funciona donde se ejecuta Claude Code: Windows, Mac y Linux. La IA lo comprueba durante el análisis.</p></div>
   </div>
   <p class="fonte" style="margin-top:22px">Y tú, ¿qué hace hoy la IA en tu trabajo que <strong>sería irreversible</strong> si algo saliera mal? Gratis en inema.club, desde cualquier lugar con internet.</p>

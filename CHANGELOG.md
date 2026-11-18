@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.4 — 17/11/2026
+- "Pronto" para texto: `kit/exemplos/pronto-texto.json`, hook `Stop` do tipo `agent` que confere fonte e número contra `dados.csv`. Provado: relatório com 100 virou 120 com link (`exemplo/PROVA.md`, prova 2).
+- Conectores e navegador: `kit/exemplos/conectores.json` com regras `ask` (enviar, apagar, lixeira, remover, publicar), que pedem confirmação em todo modo.
+- Trava ampliada: `Read/Edit(./secrets/**)` e `~/**/secrets` no sandbox (`.env.local` já era coberto por `.env.*`).
+- README: seção "E se eu abro o Claude sem restrição?" com o teste em `--dangerously-skip-permissions` (trava, hook e `ask` seguem valendo; sai o porteiro do modo automático), `autoMode.environment` com `$defaults` em `~/.claude/settings.json`, limite de 8 bloqueios do Claude Code, aviso do sandbox sem `socat`.
+- Guia (PT/EN/ES): seção "Lista clara" (trancado, pede confirmação, cobrado antes do pronto, segue sozinho, o que não faz), cenário do relatório e duas perguntas novas (modo sem restrição; navegador e conectores).
+- Fonte de terceiros citada: resumo em PDF de Nate Herk da mesma palestra, cada item conferido na documentação.
+
 ## 1.1.4 — 17/11/2026
 - Seção "De onde vem" no topo do guia e "Baseado na Anthropic" nos READMEs: palestra do time do Claude Code, artigos oficiais (auto mode: 93% dos pedidos aceitos; sandbox: 84% menos pedidos) e cada peça ligada à documentação oficial.
 

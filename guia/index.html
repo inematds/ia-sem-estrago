@@ -62,6 +62,8 @@
   .tgl:hover{border-color:var(--amb)}
   .btn{display:inline-block;background:var(--fill);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
   .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  nav .links a.sec{white-space:nowrap}
+  @media(max-width:1360px){nav .links a.opt{display:none}}
   @media(max-width:860px){nav .links a.sec{display:none}}
   @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
   .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
@@ -124,6 +126,7 @@
   .vs strong{display:block;font-family:Sora;margin-bottom:.25em}
   .vs .r{display:block;margin-top:.5em;font-weight:600}
   .vs .r.bad{color:var(--bad)} .vs .r.ok{color:var(--ok)}
+  .card ul{margin:8px 0 0;padding-left:20px}.card li{margin:5px 0}
   /* prova */
   .prova{background:var(--card);border:1px solid var(--amb);border-radius:16px;padding:26px 26px 22px;margin-top:6px}
   body.light .prova{border-color:#EAB308}
@@ -161,10 +164,11 @@
   <div class="links">
     <a class="sec" href="#explicado">O ganho</a>
     <a class="sec" href="#dia">No seu dia</a>
-    <a class="sec" href="#como">Como funciona</a>
+    <a class="sec opt" href="#como">Como funciona</a>
+    <a class="sec" href="#lista">Lista clara</a>
     <a class="sec" href="#comecar">Como começar</a>
     <a class="sec" href="#base">Base Anthropic</a>
-    <a class="sec" href="#prova">A prova</a>
+    <a class="sec opt" href="#prova">A prova</a>
     <span class="lang"><a class="on" href="./">PT</a><a href="en/">EN</a><a href="es/">ES</a></span>
     <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
     <a class="btn" href="https://github.com/inematds/ia-sem-estrago" target="_blank" rel="noopener">GitHub</a>
@@ -231,11 +235,12 @@
 <section id="dia"><div class="wrap">
   <span class="chip">No seu dia a dia</span>
   <h2>Como isso muda o seu <span class="amb">dia</span></h2>
-  <p class="sub">Você não precisa programar para sentir a diferença. Veja três situações comuns de quem usa a IA para trabalhar.</p>
-  <div class="grid g3">
+  <p class="sub">Você não precisa programar para sentir a diferença. Veja quatro situações comuns de quem usa a IA para trabalhar.</p>
+  <div class="grid g2">
     <div class="card"><h3>🗂️ "Organize os arquivos do projeto"</h3><p><strong>Hoje:</strong> você fica olhando, com medo de a IA apagar a pasta errada.</p><p><strong>Com o kit:</strong> ela move, renomeia e arruma à vontade. Apagar uma pasta inteira de uma vez está travado, então o pior não acontece.</p></div>
     <div class="card"><h3>🌐 "Arrume o formulário do site"</h3><p><strong>Hoje:</strong> a IA diz "pronto", você confere e o formulário continua quebrado. Você pede de novo, e de novo.</p><p><strong>Com o kit:</strong> antes de parar, um teste preenche o formulário. Se falhar, ela mesma volta e conserta. O "pronto" chega testado.</p></div>
     <div class="card"><h3>🔑 "Ligue o sistema na API nova"</h3><p><strong>Hoje:</strong> a senha da API fica num arquivo do projeto, e você torce para a IA não ler nem mandar para fora.</p><p><strong>Com o kit:</strong> o arquivo de senhas e as suas chaves de acesso ficam fora do alcance dela. Ela faz o trabalho sem ver a senha.</p></div>
+    <div class="card"><h3>📊 "Faça o relatório do mês"</h3><p><strong>Hoje:</strong> a IA escreve bonito, mas troca um número e inventa uma fonte. Você só percebe na reunião.</p><p><strong>Com o kit:</strong> antes de entregar, outra IA confere o texto contra a sua planilha. Testamos: o relatório dizia 100, a planilha dizia 120. Ela foi barrada, corrigiu para 120 e pôs o link da fonte.</p></div>
   </div>
   <div class="prova" style="margin-top:22px">
     <ol class="tl">
@@ -257,6 +262,42 @@
     <div class="card"><h3>✅ 2. O teste antes do "pronto"</h3><p>Funciona como o inspetor no fim da linha de produção. Você diz uma vez o que é "pronto", e um teste confere isso toda vez que a IA tenta encerrar.</p><p><strong>Passou:</strong> ela entrega.<br><strong>Falhou:</strong> ela recebe o motivo, volta e conserta. Para não ficar em círculo, depois de 3 tentativas ela para e chama você.</p></div>
   </div>
   <div class="card" style="margin-top:16px"><h3>🤝 E o resto?</h3><p>Tudo o que tem volta segue sozinho, sem pedir licença a cada passo: o modo automático do Claude Code decide. Se a IA errar ali, você desfaz. O kit não promete uma IA que nunca erra. Promete que o erro que não tem conserto não acontece, e que o "pronto" quer dizer pronto.</p></div>
+</div></section>
+
+<section id="lista"><div class="wrap">
+  <span class="chip">Lista clara</span>
+  <h2>O que o kit <span class="amb">faz e não faz</span></h2>
+  <p class="sub">Tudo numa olhada só. Se você ler só uma parte deste guia, leia esta.</p>
+  <div class="grid g2">
+    <div class="card"><h3>🔒 Fica trancado, sempre</h3><ul>
+      <li>Apagar uma pasta inteira de uma vez</li>
+      <li>Ler os arquivos de senha do projeto (<code>.env</code>, <code>.env.local</code>, a pasta <code>secrets</code>)</li>
+      <li>Ler as suas chaves de acesso do computador</li>
+      <li>Apagar ou sobrescrever o histórico do projeto</li>
+    </ul></div>
+    <div class="card"><h3>✋ Pede a sua confirmação</h3><ul>
+      <li>Mandar e-mail ou mensagem por um conector</li>
+      <li>Apagar ou mandar para a lixeira um arquivo no Drive ou noutro serviço</li>
+      <li>Publicar algo para fora</li>
+      <li>Vale até para quem abre o Claude sem restrição</li>
+    </ul></div>
+    <div class="card"><h3>✅ É cobrado antes do "pronto"</h3><ul>
+      <li>Código: os testes do projeto passam</li>
+      <li>Texto: toda afirmação tem fonte e todo número bate com a planilha</li>
+      <li>A IA mostra o resultado real da conferência, não um resumo</li>
+      <li>Depois de 3 tentativas sem passar, ela para e chama você</li>
+    </ul></div>
+    <div class="card"><h3>🟢 Segue sozinho</h3><ul>
+      <li>Criar, editar, mover e renomear arquivos</li>
+      <li>Instalar o que o projeto já pede</li>
+      <li>Tudo o que dá para desfazer</li>
+    </ul></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>⚠️ O que o kit não faz</h3><ul>
+    <li>Não impede erro que tem volta: esse você desfaz.</li>
+    <li>Não protege o que você faz fora do Claude Code.</li>
+    <li>Não adivinha o que é "pronto": você diz uma vez, e ele cobra sempre.</li>
+  </ul></div>
 </div></section>
 
 <section id="comecar"><div class="wrap">
@@ -305,6 +346,8 @@ Não mude nada ainda. Mostre o plano e espere eu dizer sim.</pre>
     <div class="card"><h3>A IA não fica sem controle?</h3><p>Fica com menos cliques, não com menos controle. O que não tem volta continua trancado, e você decide o que é "pronto".</p></div>
     <div class="card"><h3>E se eu já tenho as minhas configurações?</h3><p>O kit não apaga nada seu. O pedido manda a IA mostrar o plano antes, e ela junta o que você aprovar ao que já existe.</p></div>
     <div class="card"><h3>Quanto custa?</h3><p>Nada. O kit e este guia são grátis. Você só precisa da IA que já usa.</p></div>
+    <div class="card"><h3>E se eu abro o Claude "sem restrição"?</h3><p>Quem abre com <code>--dangerously-skip-permissions</code> continua protegido: testamos, e a trava e o teste do "pronto" seguiram valendo. O que sai é o porteiro do modo automático, que olhava todo o resto. Por isso preferimos o modo automático, e com o kit no projeto.</p></div>
+    <div class="card"><h3>E o navegador e os conectores?</h3><p>Com o Claude abrindo o navegador ou usando Gmail e Drive, a caixa fechada não cobre. O kit traz uma regra que faz a IA pedir a sua confirmação antes de enviar, apagar ou publicar.</p></div>
     <div class="card"><h3>Funciona em qualquer computador?</h3><p>Funciona onde o Claude Code roda: Windows, Mac e Linux. A IA confere isso na análise.</p></div>
   </div>
   <p class="fonte" style="margin-top:22px">E você: o que a IA faz hoje no seu trabalho que <strong>não teria volta</strong> se desse errado? Grátis no inema.club, direto na internet.</p>

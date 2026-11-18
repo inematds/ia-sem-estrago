@@ -16,13 +16,17 @@ Pronto é:
 - <o que some, ex.: "nenhuma chamada à API velha no código (grep vazio)">
 
 Divida em tarefas pequenas; cada uma com o seu teste.
-No fim, me mostre a saída real da checagem (eu não estava lá para ver).
+No fim, me mostre a saída real de cada checagem, não um resumo (eu não estava lá para ver).
 ```
 
 ## Fora do código
 
 - Relatório: toda afirmação tem link de fonte; todo número bate com a planilha.
 - Post/roteiro: cabe no limite de caracteres; o título sai da frase principal.
+
+Para texto não há `npm test`, então quem confere é outra IA. `exemplos/pronto-texto.json` traz um hook `Stop` do tipo `agent`:
+antes de encerrar, ele lê o texto e a planilha (`dados.csv`) e só deixa parar se toda afirmação tiver fonte e todo número bater.
+Se faltar algo, devolve `{"ok": false, "reason": "..."}` e o Claude volta para corrigir. Junte o bloco `hooks.Stop` ao seu `.claude/settings.json` e troque `dados.csv` pela sua planilha.
 
 ## O hook cobra sozinho
 

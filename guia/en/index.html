@@ -62,6 +62,8 @@
   .tgl:hover{border-color:var(--amb)}
   .btn{display:inline-block;background:var(--fill);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
   .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  nav .links a.sec{white-space:nowrap}
+  @media(max-width:1360px){nav .links a.opt{display:none}}
   @media(max-width:860px){nav .links a.sec{display:none}}
   @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
   .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
@@ -124,6 +126,7 @@
   .vs strong{display:block;font-family:Sora;margin-bottom:.25em}
   .vs .r{display:block;margin-top:.5em;font-weight:600}
   .vs .r.bad{color:var(--bad)} .vs .r.ok{color:var(--ok)}
+  .card ul{margin:8px 0 0;padding-left:20px}.card li{margin:5px 0}
   /* prova */
   .prova{background:var(--card);border:1px solid var(--amb);border-radius:16px;padding:26px 26px 22px;margin-top:6px}
   body.light .prova{border-color:#EAB308}
@@ -161,10 +164,11 @@
   <div class="links">
     <a class="sec" href="#explicado">The benefit</a>
     <a class="sec" href="#dia">Your day</a>
-    <a class="sec" href="#como">How it works</a>
+    <a class="sec opt" href="#como">How it works</a>
+    <a class="sec" href="#lista">Clear list</a>
     <a class="sec" href="#comecar">How to start</a>
     <a class="sec" href="#base">Anthropic’s sources</a>
-    <a class="sec" href="#prova">The proof</a>
+    <a class="sec opt" href="#prova">The proof</a>
     <span class="lang"><a href="../">PT</a><a class="on" href="./">EN</a><a href="../es/">ES</a></span>
     <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
     <a class="btn" href="https://github.com/inematds/ia-sem-estrago" target="_blank" rel="noopener">GitHub</a>
@@ -231,11 +235,12 @@
 <section id="dia"><div class="wrap">
   <span class="chip">In your day</span>
   <h2>How this changes your <span class="amb">day</span></h2>
-  <p class="sub">You don’t need to write code to see the difference. Here are three common ways people use AI at work.</p>
-  <div class="grid g3">
+  <p class="sub">You don’t need to code to see the difference. Here are four common situations for people who use AI at work.</p>
+  <div class="grid g2">
     <div class="card"><h3>🗂️ “Organize the project files”</h3><p><strong>Today:</strong> You watch, afraid the AI will delete the wrong folder.</p><p><strong>With the kit:</strong> It can move, rename, and organize files. Deleting a whole folder at once is blocked, so the worst can’t happen.</p></div>
     <div class="card"><h3>🌐 “Fix the website form”</h3><p><strong>Today:</strong> The AI says “done,” you check, and the form is still broken. You ask again, and again.</p><p><strong>With the kit:</strong> Before stopping, a test fills out the form. If it fails, the AI goes back and fixes it. You get work that’s been tested.</p></div>
     <div class="card"><h3>🔑 “Connect the system to the new API”</h3><p><strong>Today:</strong> The API password is in a project file, and you hope the AI won’t read it or send it outside.</p><p><strong>With the kit:</strong> Password files and access keys stay out of reach. The AI does the work without seeing the password.</p></div>
+    <div class="card"><h3>📊 “Prepare this month’s report”</h3><p><strong>Today:</strong> AI writes beautifully, but changes a number and makes up a source. You only notice during the meeting.</p><p><strong>With the kit:</strong> before delivery, another AI checks the text against your spreadsheet. We tested it: the report said 100, but the spreadsheet said 120. It caught the error, corrected it to 120, and added the source link.</p></div>
   </div>
   <div class="prova" style="margin-top:22px">
     <ol class="tl">
@@ -257,6 +262,42 @@
     <div class="card"><h3>✅ 2. The test before “done”</h3><p>It works like an inspector at the end of a production line. You say once what “done” means, and a test checks it every time the AI tries to finish.</p><p><strong>Pass:</strong> it delivers the work.<br><strong>Fail:</strong> it gets the reason, goes back, and fixes it. To keep it from going in circles, it stops and calls you after 3 tries.</p></div>
   </div>
   <div class="card" style="margin-top:16px"><h3>🤝 What about everything else?</h3><p>Anything you can undo runs on its own, without asking permission at every step. Claude Code’s auto mode decides. If the AI makes a mistake, you can undo it. The kit doesn’t promise an AI that never makes mistakes. It promises that mistakes you can’t fix won’t happen, and that “done” means done.</p></div>
+</div></section>
+
+<section id="lista"><div class="wrap">
+  <span class="chip">Clear list</span>
+  <h2>What the kit <span class="amb">does and doesn’t do</span></h2>
+  <p class="sub">Everything at a glance. If you read only one part of this guide, read this one.</p>
+  <div class="grid g2">
+    <div class="card"><h3>🔒 Always locked</h3><ul>
+      <li>Deleting an entire folder at once</li>
+      <li>Reading the project’s password files (<code>.env</code>, <code>.env.local</code>, the <code>secrets</code> folder)</li>
+      <li>Reading your computer’s access keys</li>
+      <li>Deleting or overwriting the project history</li>
+    </ul></div>
+    <div class="card"><h3>✋ Asks for your confirmation</h3><ul>
+      <li>Sending an email or message through a connector</li>
+      <li>Deleting or moving a file to the trash in Drive or another service</li>
+      <li>Publishing something outside the project</li>
+      <li>This also applies when you open Claude without restrictions</li>
+    </ul></div>
+    <div class="card"><h3>✅ Checked before “done”</h3><ul>
+      <li>Code: the project’s tests pass</li>
+      <li>Text: every claim has a source, and every number matches the spreadsheet</li>
+      <li>The AI shows the actual check results, not a summary</li>
+      <li>After 3 failed attempts, it stops and calls you</li>
+    </ul></div>
+    <div class="card"><h3>🟢 Keeps going on its own</h3><ul>
+      <li>Creating, editing, moving, and renaming files</li>
+      <li>Installing what the project already requires</li>
+      <li>Anything that can be undone</li>
+    </ul></div>
+  </div>
+  <div class="card" style="margin-top:16px"><h3>⚠️ What the kit doesn’t do</h3><ul>
+    <li>It doesn’t prevent mistakes that can be undone: you can undo those.</li>
+    <li>It doesn’t protect what you do outside Claude Code.</li>
+    <li>It doesn’t guess what “done” means: you tell it once, and it checks every time.</li>
+  </ul></div>
 </div></section>
 
 <section id="comecar"><div class="wrap">
@@ -305,6 +346,8 @@ Don’t change anything yet. Show me the plan and wait for me to say yes.</pre>
     <div class="card"><h3>Does the AI lose control?</h3><p>There are fewer clicks, not less control. Actions you can’t undo stay locked, and you decide what “done” means.</p></div>
     <div class="card"><h3>What if I already have my own settings?</h3><p>The kit doesn’t delete anything. The request tells the AI to show you a plan first, then it adds what you approve to your existing settings.</p></div>
     <div class="card"><h3>How much does it cost?</h3><p>Nothing. The kit and this guide are free. You only need the AI you already use.</p></div>
+    <div class="card"><h3>What if I open Claude “without restrictions”?</h3><p>You’re still protected if you open it with <code>--dangerously-skip-permissions</code>: we tested it, and the lock and the “done” check still worked. What goes away is the auto mode gatekeeper that checked everything else. That’s why we recommend auto mode, with the kit in the project.</p></div>
+    <div class="card"><h3>What about the browser and connectors?</h3><p>When Claude opens the browser or uses Gmail and Drive, the closed box (sandbox) doesn’t cover those actions. The kit includes a rule that makes the AI ask for your confirmation before sending, deleting, or publishing.</p></div>
     <div class="card"><h3>Does it work on any computer?</h3><p>It works wherever Claude Code runs: Windows, Mac, and Linux. The AI checks this when it reviews your project.</p></div>
   </div>
   <p class="fonte" style="margin-top:22px">And you: what does AI do in your work today that <strong>you couldn’t undo</strong> if it went wrong? Free at inema.club, right here online.</p>
